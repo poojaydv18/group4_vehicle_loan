@@ -1,0 +1,114 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>EMI Calculator</title>
+<style>
+button {
+    background-color: gray;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;
+width:60%;
+MARGIN: AUTO;}
+form {border: 3px solid #f1f1f1;
+color: white;
+background-color:#1C3653;}
+
+
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+	margin:50px 50px 50px 50px;
+
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.container {
+    padding: 16px;
+}
+</style>
+<script type="text/javascript">
+function emi()
+{
+        var principal = document.formval.principal_amt.value; // pick principal value from from..
+        var rate = document.formval.rate.value;
+        var roi=rate/(12*100);
+        var tenure = document.formval.tenure.value; // pick tenure value from from..
+        var tenureinmonths = tenure * 12;
+        var compoundinterest = (principal * roi * Math.pow((1+roi),tenureinmonths))/(Math.pow((1+roi),tenureinmonths)-1); 
+        var emi = Math.ceil(compoundinterest * 100) / 100; // to calculate emi amount..
+		if(principal>=0 && roi>=0 && tenure>=0){
+        document.formval.fieldemi.value = emi.toFixed(2);     // to assign value in emi as fixed upto two decimal..
+		}
+		else
+			document.write("Invalid inputs");
+} 
+        </script>
+</head>
+<body background="images/tesla3.jpeg">
+
+<br> </br>
+<form name="formval">
+		<table cellpadding=3>
+			<caption>
+				<b><u>EMI Calculator</u></b>
+			</caption>
+			<tr>
+				<td>Loan Amount :</td>
+				<td><input name="principal_amt" type="text"></td>
+			</tr>
+			<tr>
+				<td>Tenure(in years) :</td>
+				<td><input name="tenure" type="text"></td>
+			</tr>
+				 <tr>
+				<td>Rate of interest :</td>
+				<td><input name="rate" type="text"></td>
+			</tr>
+		</table>
+		<br> <input type="button" name="calculate" value="Calculate"
+			onclick="emi()"> <br>
+		<table cellpadding=3>
+			<tr>
+				<td>EMI :</td>
+				<td><input name="fieldemi" type="text" readonly></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
