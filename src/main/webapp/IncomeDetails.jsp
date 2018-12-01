@@ -117,10 +117,10 @@ $( window ).load(function() {
 			<hr noshade>
 			
 			
-			   <div class="form-submit">
-                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+			   
+                           
                             <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
-                        </div>
+                        
 
 
 			
@@ -131,6 +131,7 @@ $( window ).load(function() {
         </div>
 
     </div>
+<div>
 
 </form>
 

@@ -33,7 +33,7 @@ $( window ).load(function() {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: teal;
+    background:"images/bg1.png";
     width:50%;
     margin: auto;}
 
@@ -47,7 +47,8 @@ body {
 }
 </style>
 </head>
-<body>
+<body  background="images/bg1.png";>
+
 <ul class="list-group">
 <h1> <li class="list-group-item">Hello: <span id = "display_user"></span></li></h1>
   <li class="list-group-item"> Car Make: <span id = "display_carmake"></span></li>
@@ -58,10 +59,11 @@ body {
   <li class="list-group-item"> Email: <span id = "display_email"></span></li>
   <li class="list-group-item"> Eligible Loan Amount: <span id = "display_loanamount"></span> </p>
 </ul>
+
 <p>
  <div >
       <h3>
-<a class="btn btn-large btn-success" data-toggle="confirmation" 
+<a class="btn btn-large btn-success"   ; data-toggle="confirmation" 
    href="LoanOffer.jsp" >Apply For The given Eligible Loan Amount</a></h3>
     </div>
  </body>

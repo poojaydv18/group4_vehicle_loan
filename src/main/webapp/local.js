@@ -7,7 +7,17 @@ if(localStorage){
             var str_exshowroomprice = $("#exshowroomprice").val();
             var str_user = $("#user").val();
             var str_age = $("#age").val();
-            var str_gender = $("#gender").val();
+           // var str_gender = $("#gender").val();
+            var str_gender  =request.getParameter("gender");
+           /* if (document.getElementById('male').checked) {
+            var	str_gender = document.getElementById('male').value;
+            	}
+            if (document.getElementById('female').checked) {
+            	var str_gender = document.getElementById('female').value;
+            	}
+            if (document.getElementById('other').checked) {
+            	var str_gender = document.getElementById('other').value;
+            	}*/
             var str_employmenttype = $("#employmenttype").val();
             var str_yearlysalary = $("#yearlysalary").val();
             var str_existingemi = $("#existingemi").val();
