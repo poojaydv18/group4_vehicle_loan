@@ -1,24 +1,23 @@
-body {
+/* body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: teal;
-    width:80%;
+    width:100%;
     padding:100px;
-    margin: auto;
-   
-}
+    margin: auto;  
+} */
 
-* {
+/* * {
     box-sizing: border-box;
 }
 
 
 
 
-/* Add padding to containers */
+Add padding to containers
 .container {
     padding: 16px;
     background-color: white;
-}
+} */
 
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=number] {

@@ -95,8 +95,7 @@ a {
     
 <hr>
     
-              
-
+       
     <button type="submit" class="submit">Submit</button>
   </div>
   

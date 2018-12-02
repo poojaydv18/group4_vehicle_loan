@@ -104,9 +104,11 @@ return true;
                             <form role="form" name="formadmin" action="AdminDashboard.jsp" id="adminform" method="post" onsubmit="return checkform(this);">
                                 <fieldset>
                                     <div class="form-group">
+                                                                            <label><i class="fa fa-envelope" aria-hidden="true"></i> E-mail</label>
                                         <input class="form-control" placeholder="E-mail" name="adminemail" type="email"  autofocus oninvalid="this.setCustomValidity('Email Can Not be Empty')">
                                     </div>
                                     <div class="form-group">
+                                    <label><i class="fa fa-key" aria-hidden="true"></i> Password</label>
                                         <input class="form-control" placeholder="Password" name="adminpassword" type="password" oninvalid="this.setCustomValidity('Password Can Not be Empty')">
                                     </div>
                                     <div class="capbox">

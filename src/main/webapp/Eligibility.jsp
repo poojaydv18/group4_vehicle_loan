@@ -1,15 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 
 <html> 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
+
+ 
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+   background: url(images/bgcar.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+
+
+
+.header {
+  padding: 10px 16px;
+  
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+</style>
+<!-- <style>
 body{
 background-repeat: no-repeat;
     background-attachment: fixed; }
-</style>
+</style> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -78,25 +115,31 @@ else{
 
 
 </head>
-<body background="images/bg1.png">
+<body>
+<div class="header" id="myHeader" style="width:15%;">
+  <a href="index.jsp"><h2>Vehicle Loan <br><i class="fa fa-car" aria-hidden="true"></i></h2></a>
+</div>
+<div class="content" style="width:60%; margin:auto">
 <form method="post" action="Confirmation.jsp">
 
-  <div class="container">
-
+  <div class="container" style="width:100%;">
+  
+<div style="background-color:black;color:white;padding:20px;">
 <h4> Vehicle Details:</h4>
-
+</div>
+<br>
 
 <label for="Car Make"><b><i class="fa fa-car" aria-hidden="true"></i> Car Make</b></label>
     <div class='resp_code frms'>
       
        
       <div id="selection">
-        <select id="listBox" onchange='selct_car(this.value)'></select>
+        <select id="listBox" onchange='selct_car(this.value)' required></select>
 </div>
 <label for="Car Model"><b><i class="fa fa-car " aria-hidden="true"></i> Car Model</b></label>
 <div class='resp_code frms'>
 	
-        <select id='secondlist'></select>
+        <select id='secondlist' required></select>
       </div>
       <div id="dumdiv" align="center" style=" font-size: 10px;color: #dadada;">
         <a id="dum" style="padding-right:0px; text-decoration:none;color: green;text-align:center;" href="http://www.hscripts.com"></a>
@@ -105,16 +148,17 @@ else{
 
  
  
-<label><i class="fa fa-university" aria-hidden="true"></i> Ex-Showroom Price:</label>
+<label><i class="fa fa-rupee-sign"></i> Ex-Showroom Price:</label>
     <input type="number" pattern="[1-9]{4-9}" id="exshowroomprice"  name="Ex-Showroom Price" placeholder="Enter Value" title="enter number format" required><br><br>
 
-<label><i class="fa fa-university" aria-hidden="true"></i> On Road Price</label>
+<label><i class="fa fa-rupee-sign"></i> On Road Price</label>
     <input type="number" pattern="[1-9]{4-9}" id="onroadprice" name="On Road Price" placeholder="Enter Value" title="enter number format" required><br>
    <hr>
 
-
+<div style="background-color:black;color:white;padding:20px;">
 <h4> Applicant Details:</h4>
-
+</div>
+<br>
 <label><i class="fa fa-user" aria-hidden="true"></i> Name:</label>
    <input type="text" id="user" name="user" placeholder="Enter Full Name" required><br><br>
 
@@ -146,14 +190,17 @@ else{
     </select>
 </div>
 <br><br>
-<label><i class="fa fa-inr fa-fw" aria-hidden="true"></i> Yearly Salary:</label>
+<label><i class="fa fa-rupee-sign"></i> Yearly Salary:</label>
     <input type="number" pattern="[1-9]{4-9}" title="enter number format" id="yearlysalary" name="Yearly Salary" placeholder="Enter Yearly Salary" required><br><br>
 
 
 <label><i class="fa fa-user" aria-hidden="true"></i> Existing EMI</label></br>
     <input type="number" pattern="[1-9]{4-9}" title="enter number format"  id="existingemi" name="Existing EMI" placeholder="Existing EMI" ><br><br>
 <hr>
+<div style="background-color:black;color:white;padding:20px;">
 <h4>Contact Details</h4>
+</div>
+<br>
 <label><i class="fa fa-phone" aria-hidden="true"></i> Mobile No</label><br>
     <input type="text" pattern="[6-9]{1}[0-9]{9}" title="Please enter a valid mobile number"maxlength="10" id="mobile" name="mobile" placeholder="Enter Mobile No:" required><br><br>
 <label><i class="fa fa-envelope" aria-hidden="true"></i> Email ID</label>
@@ -166,9 +213,21 @@ else{
 <!-- <button id="myBtn" class="row" >Check Eligibility</button>
  -->    </div>
 </form>
+</div>
 
+<script>
+window.onscroll = function() {myFunction()};
 
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
 
-
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
 </body>
 </html>

@@ -64,16 +64,16 @@ Type the above number:<br>
 </div>
 
 <div >
-<a href="ForgetPassword.jsp">Forget Password</a>
+<a href="ForgetPassword.jsp">Forget Password</a> -----------------------
+<span class="txt1" style="float:"left"> <a href="AdminLogin.jsp" class="txt2 hov1">
+                        Login As Admin
+                        </a> </span>
 </div>
                                     
                                     <div class="text-center p-t-45 p-b-4">
-                        <span class="txt1">
-                        Login As Admin
-                        </span>
-                        <a href="AdminLogin.jsp" class="txt2 hov1">
-                            press here
-                        </a>
+                        
+                      
+<br>
 
                                     <input type="submit" value="Login" class="btn btn-lg btn-success btn-block"onClick=" return checkforminput();"> </input> <!-- Change this to a button or input when using this as a form -->
                           

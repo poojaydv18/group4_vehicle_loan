@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/style.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
 <script type="text/javascript">
 // Check if the localStorage object exists
 if(localStorage){
@@ -191,51 +193,63 @@ a {
 <body>
 
     <div class="main">
-        <div class="container">
+        <div class="container" >
             <div class="signup-content">           
                 <div class="signup-form">
                 <form method="POST" class="register-form" id="register-form" action="save"  >
+                <div style="background-color:black;color:white;padding:20px;">
+                
                         <h2>Personal Details</h2>
+                        </div>
                         <br><br>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Full Name :</label>
+                                <label for="name"><i class="fa fa-user" aria-hidden="true"></i>
+                                Full Name :</label>
                                 <input type="text" name="name" id="name" required readonly/>
                             </div>
                          
                         </div>
 
 			 <div class="form-group">
-                                <label for="gender">Gender :</label>
+                                <label for="gender"><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender :</label>
                                 <input type="text" name="gender" id="gender" required readonly/>
                             </div>
                                
 			
 			<div class="form-group">
-                            <label for="age">Age :</label>
+                            <label for="age"><i class="fa fa-calendar" aria-hidden="true"></i>  Age :</label>
                             <input type="text" name="age" id="age" required readonly/>
                         </div>
 
 
 			<div class="form-group">
-                            <label for="mobile">Mobile No :</label>
+                            <label for="mobile"><i class="fa fa-phone" aria-hidden="true"></i>   Mobile No :</label>
                             <input type="text" name="mobile" id="mobile" required readonly/>
                         </div>
 
 			
                        <div class="form-group">
-                            <label for="emailid">Email ID :</label>
+                            <label for="emailid"><i class="fa fa-envelope" aria-hidden="true"></i> Email ID :</label>
                             <input type="text" name="email" id="email" required readonly/>
                         </div>                       
 
 			<div class="form-group">
-                            <label for="password">Password :</label>
+                            <label for="password"><i class="fa fa-key" aria-hidden="true"></i>
+                               Password :</label>
                             <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one number,one uppercase letter and one lowercase letter, and at least 8 or more characters" required />
+                         <i class="fa fa-info-circle" aria-hidden="true"></i>The password must be atleast (8 characters long, one uppercase, one lowercase, one digit).<br>
                         </div>
-                        <div id="message">
                         
-                         <div class="form-group">
-                            <label for="Security Question">Security Question</label>  </br>  <br>   
+                        <br>
+                          <div class="form-row">
+                            <div class="form-group">
+                               <div class='resp_code frms'>
+                        
+                        
+                         
+                            <label for="Security Question"><i class="fa fa-question-circle" aria-hidden="true"></i>
+                              Security Question</label>  </br>  <br>   
                             <div id="selection">                     
                             <select class="security" name="que" id="que" required>
       <option value="">Select a question from the following options.</option>
@@ -246,9 +260,12 @@ a {
    </select>
    </div>
                         </div>    
+                        </div>
+                        </div>
                         </br>
                          <div class="form-group">
-                            <label for="answer">Answer</label>
+                            <label for="answer"><i class="fa fa-reply" aria-hidden="true"></i>
+                              Answer</label>
                             <input type="text" name="ans" id="ans" required />
                         </div>    
 
@@ -313,7 +330,8 @@ myInput.onkeyup = function() {
 }
 </script>
                         <div class="form-group">
-                            <label for="address">Address :</label>
+                            <label for="address"><i class="fa fa-address-card" aria-hidden="true"></i>
+                               Address :</label>
                             <input type="text" name="address" id="address" required />
                         </div>
                        
@@ -336,7 +354,8 @@ myInput.onkeyup = function() {
                             
                        
                         <div class="form-group">
-                            <label for="pincode">Pincode :</label>
+                            <label for="pincode"><i class="fa fa-map-pin" aria-hidden="true"></i>
+                               Pincode :</label>
                             <input type="text" pattern="[1-9][0-9]{5}"  name="pincode" id="pincode" />
                         </div>
                         

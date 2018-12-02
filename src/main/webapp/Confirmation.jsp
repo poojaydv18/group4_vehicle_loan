@@ -31,27 +31,36 @@ $( window ).load(function() {
 </script>
 <style>
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:"images/bg1.png";
-    width:50%;
-    margin: auto;}
 
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+   background: url(images/bgcar.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
 
 
 
 .container {
-    padding: 16px;
+    padding: 30px;
     color:255,255,255;
+    width:50%;
     
 }
 </style>
 </head>
 <body  background="images/bg1.png";>
+<div class="container">
+<div class="header" id="myHeader" style="width:30%;">
+  <a href="index.jsp"><h2>Vehicle Loan <br><i class="fa fa-car" aria-hidden="true"></i></h2></a>
+</div>
 
 <ul class="list-group">
-<h1> <li class="list-group-item">Hello: <span id = "display_user"></span></li></h1>
-  <li class="list-group-item"> Car Make: <span id = "display_carmake"></span></li>
+<h1> <li class="list-group-item" ><b>Hello: <span id = "display_user"></span></li></h1>
+  <li class="list-group-item"><b> Car Make: <span id = "display_carmake"></span></li>
   <li class="list-group-item">Car Model: <span id = "display_carmodel"></span></li>
   <li class="list-group-item"> Applied Loan Amount: <span id = "display_exshowroomprice"></li>
   	 <li class="list-group-item">Employment Details: <span id = "display_employment"></span></li>
@@ -65,6 +74,7 @@ body {
       <h3>
 <a class="btn btn-large btn-success"   ; data-toggle="confirmation" 
    href="LoanOffer.jsp" >Apply For The given Eligible Loan Amount</a></h3>
+    </div>
     </div>
  </body>
 </html>

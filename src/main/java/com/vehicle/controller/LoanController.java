@@ -21,9 +21,8 @@ public class LoanController {
 	
 	@RequestMapping(value = "/saveLoan", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute LoanOffer lo)
-	{
-		
+	{	
 		ldao.saveLoanOffer(lo);
-		return new ModelAndView("UserLogin");
+		return new ModelAndView("IdentityDetails");
 	}
 }

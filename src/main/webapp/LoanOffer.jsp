@@ -4,8 +4,7 @@
 
 <html>
 <head>
-
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
@@ -106,6 +105,10 @@ border:}
 </style>
 </head>
 <body>
+<div class="container">
+<div class="header" id="myHeader" style="width:30%;">
+  <a href="index.jsp"><h2>Vehicle Loan <br><i class="fa fa-car" aria-hidden="true"></i></h2></a>
+</div>
 <div id="bg">
 <h2><center>LOAN OFFERS</center></h2>
 <p><center>CUSTOMIZE YOUR LOAN QUOTE:</center></p>
