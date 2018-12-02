@@ -31,6 +31,32 @@
 	<!-- font-awesome icons -->
 	<link href="css/fontawesome-all.min.css" rel="stylesheet">
 	
+	<style>
+	input[type=submit] {
+    width: 30%;
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;	
+}
+
+input[type=text]{
+	width:100%;
+	padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;	}
+
+	
+	</style>
 
 
 <body>
@@ -239,7 +265,7 @@
 													   </div>
 													   <div class="col-md-9 col-sm-9">
 															<div class="caption testi-text">
-																  <h4>Rahul Ahire</h4>
+																  <h4>Siddhart Kaul</h4>
 																  <h5>Software Engineer</h5>
 															  </div>
 														</div>
@@ -358,28 +384,28 @@
 
 	
 
-<!--footer-->
-	<footer>
+<footer>
 		<div class="container py-md-4 mt-md-3">
 			<div class="row footer-top-w3layouts-agile py-5">
-				<div class="col-lg-6 col-md-6 col-sm-6 footer-grid">
+				
+				<div class="col-lg-3 col-md-6 col-sm-6 footer-grid">
 					<div class="footer-title">
 						<h3>About Us</h3>
 					</div>
 					<div class="footer-text">
-						<p>We are committed to offering the highest quality, combining our energy and enthusiasm, with our years
-						of experience. Our greatest satisfaction comes in serving large numbers of satisfied clients who have experienced the joys and inspiration of not just owning the car but making their dreams come true</p>
+						<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis at tellus..</p>
 
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 footer-grid">
+
+				<div class="col-lg-3 col-md-6 col-sm-6 footer-grid">
 					<div class="footer-title">
 						<h3>Contact Us</h3>
 					</div>
 					<div class="footer-office-hour">
 						<ul>
 							<li class="hd">Address :</li>
-							<li>SCO-15 sector 17,Vashi,Navi Mumbai,400706</li>
+							<li>No.27 - 5549436 street lorem, Newyork City, USA</li>
 
 						</ul>
 						<ul>
@@ -391,11 +417,49 @@
 						</ul>
 					</div>
 				</div>
+
+
+
 				
-				
-					</form>
+
+				<div class="col-lg-6 col-md-6 col-sm-6 footer-grid">
+					<div class="footer-title">
+						<h3>Suggestion Form</h3>
+					</div>
+					<p>Reach us in case of any query or suggestion</p>
+<table>					 
+<form action="suggestion" method="post">
+<tr>
+  <th> <label class="hd"><i class="fa fa-user" aria-hidden="true"></i> <font color="white">Name:</font></label></th>
+  <td> <input type="text" id="name" name="name" placeholder="Enter Full Name" required><br></td>
+</tr>
+
+ <tr>
+    <th><label><i class="fa fa-phone" aria-hidden="true"></i><font color="white"> Mobile No:  </font></label></th>
+    <td><input type="text" pattern="[6-9]{1}[0-9]{9}" title="Please enter a valid mobile number"maxlength="10" id="mobile" name="mobile" placeholder="Enter Mobile No:" required></td>
+  </tr>
+<tr>
+<th><label><i class="fa fa-envelope" aria-hidden="true"></i> <font color="white">Email ID: </font></label></th>
+   <td> <input type="text" id="email" name="email" placeholder="Enter Email ID" pattern="[a-zA-Z]{1}[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,3}$" required><br></td>
+</tr>
+<br>
+<br>
+<hr>
+<tr>
+   <th> <label for="suggestion"><i class="fa fa-envelope" aria-hidden="true"></i> <font color="white">Message: </font></label></th>
+   <td> <textarea id="suggestion" name="suggestion" placeholder="Write something.." style="height:50px; width:350px; padding: 10px 20px;"></textarea></td>
+</tr>
+</table>
+<div align="center">
+<input type=submit class="save" value="Submit">   
+</div>
+</div>
+  </form>
 					<div class="clearfix"></div>
 				</div>
+
+
+
 			</div>
 		</div>
 	</footer>

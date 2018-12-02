@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,10 +21,22 @@ button:hover {
     opacity: 0.8;
 }
 
-body {font-family: Arial, Helvetica, sans-serif;
-width:60%;
-MARGIN: AUTO;}
+body, html {
+    height: 100%;
+    margin: 0;
+    /* The image used */
+    background-image: url("images/bg1.png");
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 form {border: 3px solid #f1f1f1;
+width:60%;
+margin:auto;
+padding: 100px;
 color: white;
 background-color:#1C3653;}
 
@@ -32,7 +45,7 @@ background-color:#1C3653;}
 .table {
     border-collapse: collapse;
     width: 100%;
-	margin:50px 50px 50px 50px;
+	margin:10px 10px;
 
 }
 
@@ -63,27 +76,27 @@ input[type=text], input[type=password] {
 }
 </style>
 <script type="text/javascript">
-function emi()
-{
-        var principal = document.formval.principal_amt.value; // pick principal value from from..
-        var rate = document.formval.rate.value;
-        var roi=rate/(12*100);
-        var tenure = document.formval.tenure.value; // pick tenure value from from..
-        var tenureinmonths = tenure * 12;
-        var compoundinterest = (principal * roi * Math.pow((1+roi),tenureinmonths))/(Math.pow((1+roi),tenureinmonths)-1); 
-        var emi = Math.ceil(compoundinterest * 100) / 100; // to calculate emi amount..
-		if(principal>=0 && roi>=0 && tenure>=0){
-        document.formval.fieldemi.value = emi.toFixed(2);     // to assign value in emi as fixed upto two decimal..
-		}
-		else
-			document.write("Invalid inputs");
-} 
+        function emi()
+        {
+                var principal = document.formval.principal_amt.value; // pick principal value from from..
+                var rate_interest = document.formval.rate.value;
+		var roi = (rate_interest)/(100*12);
+                var tenure = document.formval.tenure.value; // pick tenure value from from..
+                var tenureinmonths = tenure * 12;
+                var compoundinterest = (principal * roi * Math.pow((1+roi),tenureinmonths))/(Math.pow((1+roi),tenureinmonths)-1); 
+                var emi = Math.ceil(compoundinterest * 100) / 100; // to calculate
+    			if(principal>=0 && roi>=0 && tenure>=0){
+                document.formval.fieldemi.value = emi.toFixed(2);     // to assign value in emi as fixed upto two decimal..
+    			}
+    			else
+    				document.write("Invalid inputs");
+        } 
         </script>
 </head>
-<body background="images/tesla3.jpeg">
+<body>
 
 <br> </br>
-<form name="formval">
+	<form name="formval">
 		<table cellpadding=3>
 			<caption>
 				<b><u>EMI Calculator</u></b>
@@ -110,5 +123,6 @@ function emi()
 			</tr>
 		</table>
 	</form>
+
 </body>
 </html>

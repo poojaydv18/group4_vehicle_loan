@@ -14,7 +14,7 @@ public class UserLogin {
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.password = MD5.getMd5(password);
 	}
 	
 }

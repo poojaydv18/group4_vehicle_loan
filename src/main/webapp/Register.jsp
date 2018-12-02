@@ -233,6 +233,24 @@ a {
                             <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one number,one uppercase letter and one lowercase letter, and at least 8 or more characters" required />
                         </div>
                         <div id="message">
+                        
+                         <div class="form-group">
+                            <label for="Security Question">Security Question</label>  </br>  <br>   
+                            <div id="selection">                     
+                            <select class="security" name="que" id="que" required>
+      <option value="">Select a question from the following options.</option>
+      <option value="What was your childhood nickname?">What was your childhood nickname?</option>
+      <option value="What is your favorite movie?">What is your favorite movie?</option>
+      <option value="What is your sports hero?">What is your sports hero?</option>
+      <option value="What is your favorite food?">What is your favorite food?</option>
+   </select>
+   </div>
+                        </div>    
+                        </br>
+                         <div class="form-group">
+                            <label for="answer">Answer</label>
+                            <input type="text" name="ans" id="ans" required />
+                        </div>    
 
 </div> 
 <script>

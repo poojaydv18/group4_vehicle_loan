@@ -16,11 +16,64 @@ background-repeat: no-repeat;
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script language="JavaScript" type="text/javascript" 
-			src="local.js" ></script>
+<!-- <script language="JavaScript" type="text/javascript" 
+			src="local.js" ></script> -->
 <script language="JavaScript" type="text/javascript" 
 			src="car.js"></script>
+<script>
+if(localStorage){
+    $(document).ready(function(){
+        $(".save").click(function(){
+            // Get input name
+            var str_carmake = $("#listBox").val();
+            var str_carmodel = $("#secondlist").val();
+            var str_exshowroomprice = $("#exshowroomprice").val();
+            var str_user = $("#user").val();
+            var str_age = $("#age").val();
+           var str_gender = $("#gender").val();
+           /*  var str_gender  =request.getParameter("gender");
+           if (document.getElementById('male').checked) {
+            var	str_gender = document.getElementById('male').value;
+            	}
+            if (document.getElementById('female').checked) {
+            	var str_gender = document.getElementById('female').value;
+            	}
+            if (document.getElementById('other').checked) {
+            	var str_gender = document.getElementById('other').value;
+            	}*/
+            var str_employmenttype = $("#employmenttype").val();
+            var str_yearlysalary = $("#yearlysalary").val();
+            var str_existingemi = $("#existingemi").val();
+            var str_mobile = $("#mobile").val();
+            var str_email = $("#email").val();
 
+            var str_yearlyemi= +str_existingemi * 12;
+            var str_loan = (+str_yearlysalary - str_yearlyemi)*4 ; 
+            var str_eligibleloan = Math.min(str_loan, str_exshowroomprice);
+
+            // Store data
+            sessionStorage.setItem("store_carmake", str_carmake);
+            sessionStorage.setItem("store_carmodel", str_carmodel);
+            sessionStorage.setItem("store_exshowroomprice", str_exshowroomprice );
+            sessionStorage.setItem("store_user", str_user);
+            sessionStorage.setItem("store_age", str_age);
+            sessionStorage.setItem("store_gender", str_gender );
+            sessionStorage.setItem("store_employmenttype", str_employmenttype);
+            sessionStorage.setItem("store_yearlysalary", str_yearlysalary );
+            sessionStorage.setItem("store_existingemi", str_existingemi);
+            sessionStorage.setItem("store_mobile", str_mobile);
+            sessionStorage.setItem("store_email", str_email);
+            sessionStorage.setItem("store_appliedloan", str_exshowroomprice);
+            sessionStorage.setItem("store_eligibleloan", str_eligibleloan);
+				
+            
+        });
+    });
+} 
+else{
+    alert("Sorry, your browser do not support local storage.");
+}
+</script>
  <link rel="stylesheet" href="eligibility.css">
 
 
@@ -73,15 +126,15 @@ background-repeat: no-repeat;
 <label><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender:</label><br>
 <div class='resp_code frms'>
 
-   <!--  <select required id="gender">
+    <select required id="gender">
         <option>select category</option>
     <option value="Male">Male</option>
 	<option value="Female">Female</option>
 <option value="others">Others</option>
- </select> -->
- <input type="radio" name="gender" id="male" value="male" > Male<br>
+ </select>
+ <!-- <input type="radio" name="gender" id="male" value="male" > Male<br>
   <input type="radio" name="gender" id="female" value="female"> Female<br>
-  <input type="radio" name="gender" id="other" value="other"> Other  
+  <input type="radio" name="gender" id="other" value="other"> Other   -->
 </div>
 <br><br>
 <label><i class="fa fa-user-plus" aria-hidden="true"></i> Type Of Employment:</label>

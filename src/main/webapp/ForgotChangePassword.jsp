@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>UserLogin</title>
+        <title>Forget Password</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="admincss/bootstrap.min.css" rel="stylesheet">
@@ -33,19 +33,24 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="login-panel panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-user" aria-hidden="true"></i> User Login</h3>
+                            <h3 class="panel-title"><i class="fa fa-user" aria-hidden="true"></i> Forget Password</h3>
                         </div>
                         <div class="panel-body">
-                             <form role="form" name="userlogin" action="UserLogin" id="userform" method="post" onsubmit="return checkform(this);">
+                             <form role="form" name="forgetpassword" action="forgetpassword" id="forgetpassword" method="post" onsubmit="return checkform(this);">
                                 <fieldset>
-                                    <div class="form-group"><div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                   
+                                  
+                                                                   
+
+<div >
+
+ <div class="form-group"><div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                                         <label><i class="fa fa-envelope" aria-hidden="true"></i> E-mail</label>
                                         <input class="form-control" placeholder="E-mail" name="email" type="text"  autofocus oninvalid=('Email Can Not be Empty')"  pattern="[a-zA-Z]{1}[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,3}$" required><br>
+                                  </div> 
                                     </div>
-                                    <div class="form-group"><label><i class="fa fa-key" aria-hidden="true"></i> Password</label>
-                                        <input class="form-control" placeholder="Password" name="password" type="password" oninvalid="('Password Can Not be Empty')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                                    </div>
-                                                                   <div class="capbox">
+</div>
+<div class="capbox">
 
 <div id="CaptchaDiv"></div>
 
@@ -61,20 +66,11 @@ Type the above number:<br>
 
 </div>
 </div>
-
-<div >
-<a href="ForgetPassword.jsp">Forget Password</a>
-</div>
                                     
                                     <div class="text-center p-t-45 p-b-4">
-                        <span class="txt1">
-                        Login As Admin
-                        </span>
-                        <a href="AdminLogin.jsp" class="txt2 hov1">
-                            press here
-                        </a>
+                      
 
-                                    <input type="submit" value="Login" class="btn btn-lg btn-success btn-block"onClick=" return checkforminput();"> </input> <!-- Change this to a button or input when using this as a form -->
+                                    <input type="submit" value="Submit" class="btn btn-lg btn-success btn-block"onClick=" return checkforminput();"> </input> <!-- Change this to a button or input when using this as a form -->
                           
                                 </fieldset>
                             </form>

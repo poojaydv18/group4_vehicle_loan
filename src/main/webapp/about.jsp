@@ -60,7 +60,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<a class="nav-link" href="about.jsp">About</a>
 						</li>
 						<li class="nav-item  mr-3">
-							<a class="nav-link" href="EmiCalculator.jsp">EMI</a>
+							<a class="nav-link" href="EmiCalculator.jsp">EMI Calculator</a>
 						</li>
 					
 					  <li class="nav-item">
@@ -146,7 +146,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					<div class="thumbnail team-agileits">
 						<img src="images/te4.jpg" class="img-fluid" alt="" />
 						<div class="effectd-caption">
-							<h4 class="mb-3">Rijo Jhon</h4>
+							<h4 class="mb-3">Rijo John</h4>
 							<div class="social-lsicon">
 								
 								</a>

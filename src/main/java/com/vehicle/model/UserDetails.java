@@ -18,8 +18,22 @@ public class UserDetails {
 	private String state;
 	private String city;
 	private int pincode;
+	private String que;
+	private String ans;
 	
 	
+	public String getQue() {
+		return que;
+	}
+	public void setQue(String que) {
+		this.que = que;
+	}
+	public String getAns() {
+		return ans;
+	}
+	public void setAns(String ans) {
+		this.ans = ans;
+	}
 	public String getAddress() {
 		return address;
 	}
@@ -60,8 +74,8 @@ public class UserDetails {
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
-	}
+		this.password = MD5.getMd5(password);
+		}
 	
 	
 	public String getState() {

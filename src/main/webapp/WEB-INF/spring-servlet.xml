@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<context:component-scan base-package="com.vehicle.controller">
+	<context:component-scan base-package="com.vehicle">
 	</context:component-scan>
 
 	<bean
@@ -52,6 +52,10 @@
 		</property>
 	</bean> 
 	<bean id="sdao" class="com.vehicle.dao.SuggetionDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate">
+		</property>
+	</bean> 
+	<bean id="fpdao" class="com.vehicle.dao.ForgotPasswordDao">
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean> 

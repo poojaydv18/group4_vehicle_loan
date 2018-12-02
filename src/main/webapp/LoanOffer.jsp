@@ -15,14 +15,13 @@ if(localStorage){
 $( window ).load(function() {
 
 	 var str_loantenure = $("#tenure").val();
-     sessionStorage.setItem("store_loantenure", str_loantenure);
-
-    
+     sessionStorage.setItem("store_loantenure", str_loantenure); 
 	var UserLoan  =sessionStorage.getItem("store_eligibleloan");
 	  document.getElementById("display_loanamount").value = UserLoan;
-	  document.getElementById("display_loan").value = UserLoan;
-	  var ir= 9.25;
-      sessionStorage.setItem("store_interestrate", ir );
+		var UserLoan1  =sessionStorage.getItem("store_eligibleloan");
+	  document.getElementById("display_loan").value = UserLoan1;
+	  var IR= 9.25;
+      sessionStorage.setItem("store_interestrate", IR );
 	
   document.getElementById("display_loanamount").innerHTML =sessionStorage.getItem("store_eligibleloan");
 });
