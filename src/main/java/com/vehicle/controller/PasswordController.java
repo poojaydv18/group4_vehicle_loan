@@ -2,6 +2,9 @@ package com.vehicle.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,13 +28,21 @@ public class PasswordController {
 	        return new ModelAndView("ForgetPasswordSecurity","list",list);  
 	    } 
 	   @RequestMapping("/checksecurityanswer")
-		public ModelAndView login(ModelAndView model, @ModelAttribute UserDetails ud) {
-	        System.out.println("inside security");
+		public ModelAndView login(ModelAndView model, @ModelAttribute UserDetails ud, HttpServletRequest request) {
+	       HttpSession session = request.getSession();
+	       session.setAttribute("email", ud.getEmail());
+		   System.out.println("inside security");
 			if (fpdao.validateAnswer(ud)) {
+				model.addObject("user",ud);
 				model.setViewName("ForgotChangePassword");
 			} else {
 				model.setViewName("UserLogin");
 			}
 			return model;
-		}	   
+		}	
+	   @RequestMapping("/forgetchangepassword")  
+	    public ModelAndView forgetchangepassword( @ModelAttribute UserDetails ul){  
+	        fpdao.forgetchangepassowrd(ul); 
+	        return new ModelAndView("UserLogin");  
+	    } 
 }

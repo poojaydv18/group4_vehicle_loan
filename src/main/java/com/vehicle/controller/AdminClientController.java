@@ -38,6 +38,7 @@ public class AdminClientController {
 		List<CompleteRegistration> cr =ldao.displayUserRecord(userId);  
 		ModelAndView model=new ModelAndView();
 	    model.addObject("list", cr);
+	    System.out.println(cr);
 	    model.setViewName("ClientDetails");
 		return model;		
     }  
@@ -46,7 +47,6 @@ public class AdminClientController {
         
 		ldao.approve(userId);  
 		ModelAndView model=new ModelAndView();
-
 	    model.setViewName("ViewDetails");
 		return model;		
     }  */

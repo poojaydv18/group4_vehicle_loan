@@ -1,12 +1,18 @@
 package com.vehicle.model;
 
-public class Suggetion {
+public class Suggestion {
 	
 	private String name;
 	private long mobile;
 	private String email;
-	private String suggetion;
-	public Suggetion() {
+	private String suggestion;
+	public String getSuggestion() {
+		return suggestion;
+	}
+	public void setSuggestion(String suggestion) {
+		this.suggestion = suggestion;
+	}
+	public Suggestion() {
 	
 	}
 	public String getName() {
@@ -27,12 +33,7 @@ public class Suggetion {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getSuggetion() {
-		return suggetion;
-	}
-	public void setSuggetion(String suggetion) {
-		this.suggetion = suggetion;
-	}
+	
 
 	
 

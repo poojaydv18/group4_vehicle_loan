@@ -194,7 +194,7 @@ a {
         <div class="container">
             <div class="signup-content">           
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form" action="save">
+                <form method="POST" class="register-form" id="register-form" action="save"  >
                         <h2>Personal Details</h2>
                         <br><br>
                         <div class="form-row">
@@ -339,6 +339,35 @@ myInput.onkeyup = function() {
                             <label for="pincode">Pincode :</label>
                             <input type="text" pattern="[1-9][0-9]{5}"  name="pincode" id="pincode" />
                         </div>
+                        
+<!--                                                     <div class="form-group">
+          <label class="control-label">Photo Upload</label> <font style= "color:red;">*</font>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
+            <input class="form-control" name="files" type="file" required="required" id="file">
+          </div>
+          <div id="fileList"></div>
+        </div>
+
+		<div class="form-group">
+          <label class="control-label">Upload AadharCard</label><font style= "color:red;">*</font>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
+            <input class="form-control" name="files" type="file" required="required" onchange="javascript:updateList();">
+          </div>
+        </div>
+
+
+
+   <div class="form-group">
+          <label class="control-label">Upload PanCard</label> <font style= "color:red;">*</font>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
+            <input class="form-control" name="files" type="file" required="required" id="file"  onchange="javascript:updateList();">
+          </div>
+          <div id="fileList"></div>
+        </div>
+                       -->  
                         
 			
 			  <input type=submit class="save" value="Submit">

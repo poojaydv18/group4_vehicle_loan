@@ -42,6 +42,7 @@
                                         <label><i class="fa fa-envelope" aria-hidden="true"></i> E-mail</label>
                                         <input class="form-control" placeholder="E-mail" name="email" type="text"  autofocus oninvalid=('Email Can Not be Empty')"  pattern="[a-zA-Z]{1}[a-zA-Z0-9._%+-]+@[a-z.-]+\.[a-z]{2,3}$" required><br>
                                     </div>
+                                    </div>
                                     <div class="form-group"><label><i class="fa fa-key" aria-hidden="true"></i> Password</label>
                                         <input class="form-control" placeholder="Password" name="password" type="password" oninvalid="('Password Can Not be Empty')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                                     </div>

@@ -72,7 +72,7 @@ a {
 </head>
 <body>
 
-<form action="/action_page.php">
+<form action="uploaddoc" method="post" enctype="multipart/form-data">
   <div class="container">
     <h1>Identity Details</h1>
     
@@ -80,16 +80,16 @@ a {
 
 
   <label for="Aadhar Card"><b>Aadhar Card:</b></label>
-  <input type="file" name="aadhar" accept="image/*">
+  <input type="file" name="files ">
   <br><br><br>
   <label for="Pan Card"><b>Pan Card: </b></label>
-  <input type="file" name="pan" accept="image/*">
+  <input type="file" name="files">
   <br><br><br>
   <label for="Photo"><b>Photo:</b></label>
-  <input type="file" name="photo" accept="image/*">
+  <input type="file" name="files">
   <br><br><br>
     <label for="Pay Slip"><b>Last Six Months Pay Slip:</b></label>
-  <input type="file" name="Pay Slip" accept="image/*">
+  <input type="file" name="files ">
   <br><br><br>
     
     

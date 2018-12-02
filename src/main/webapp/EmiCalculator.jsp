@@ -6,7 +6,13 @@
 <html>
 <head>
 <title>EMI Calculator</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <style>
+#emicalc{
+    display: none;
+}
+
+
 button {
     background-color: gray;
     color: white;
@@ -34,8 +40,8 @@ body, html {
     background-size: cover;
     }
 form {border: 3px solid #f1f1f1;
-width:60%;
-margin:auto;
+width:40%;
+margin: auto ;
 padding: 100px;
 color: white;
 background-color:#1C3653;}
@@ -63,7 +69,7 @@ button {
     width: 100%;
 }
 
-input[type=text], input[type=password] {
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -99,6 +105,8 @@ input[type=text], input[type=password] {
 	<form name="formval">
 		<table cellpadding=3>
 			<caption>
+			<center>	<a href="index.jsp">	<i class="fa fa-home fa-fw fa-5x" aria-hidden="true"></i></a></center>
+			<br> <br>
 				<b><u>EMI Calculator</u></b>
 			</caption>
 			<tr>
@@ -113,16 +121,23 @@ input[type=text], input[type=password] {
 				<td>Rate of interest :</td>
 				<td><input name="rate" type="text"></td>
 			</tr>
-		</table>
-		<br> <input type="button" name="calculate" value="Calculate"
-			onclick="emi()"> <br>
-		<table cellpadding=3>
+		<br>  <br>
+	
 			<tr>
 				<td>EMI :</td>
-				<td><input name="fieldemi" type="text" readonly></td>
+				<td><input name="fieldemi" type="text"  id="emicalc" readonly></td>
 			</tr>
-		</table>
+			<tr>
+		<input type="button" name="calculate" value="Calculate"
+			onclick="emi(); myFunction();">
+		</tr>
+		</table>	
 	</form>
-
+<script>
+function myFunction() {
+    var x = document.getElementById("emicalc");
+        x.style.display = "block";
+}
+</script>
 </body>
 </html>

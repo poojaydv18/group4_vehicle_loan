@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.vehicle.model.Suggetion;
+import com.vehicle.model.Suggestion;
 import com.vehicle.model.UserDetails;
 import com.vehicle.model.UserLogin;
 
@@ -36,7 +36,13 @@ public class ForgotPasswordDao {
         System.out.println(user.size());
 		return user.size() > 0 ? true : false;
 
-	}	
+	}
+	public int forgetchangepassowrd(UserDetails ud){    
+		System.out.println(ud.getEmail()+' '+ud.getPassword());
+	    String sql="update gr4_user_details set gud_password='"+ud.getPassword()+"' where GUD_EMAIL='"+ud.getEmail()+"' ";    
+	    return jdbcTemplate.update(sql);    
+	} 
+		
 }
 class UserAnswerMapper implements RowMapper<UserDetails> {
 	  public UserDetails mapRow(ResultSet rs, int arg1) throws SQLException {

@@ -19,6 +19,6 @@ public class ApproveContoller {
     public ModelAndView approve( @ModelAttribute LoanOffer lo){  
         
 		ldao.approve(lo.getUserId());  
-		return new ModelAndView("redirect:/ViewClients");  
+		return new ModelAndView("redirect:../viewclient");  
     }  
 }
