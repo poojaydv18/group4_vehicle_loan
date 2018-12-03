@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<title>404 HTML Template by Colorlib</title>
+	<title>Error Page</title>
 
 <script type="text/javascript"  src="back.js"></script>
 
@@ -72,8 +72,7 @@
             </td>
          </tr>
       </table>
-<br>
-			
+<br>	
 			<a href="index.jsp">Back to homepage</a>
 		</div>
 	</div>

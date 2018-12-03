@@ -19,9 +19,7 @@ public class SuggetionController {
 	//this will get user's queries and feedback and store in the database.
 	@RequestMapping(value = "/suggestion", method = RequestMethod.POST)
 	public @ResponseBody ModelAndView save(@ModelAttribute Suggestion u) {
-		
-		
-		sdao.saveData(u);
+			sdao.saveData(u);
 		return new ModelAndView("index");
 		
 	}

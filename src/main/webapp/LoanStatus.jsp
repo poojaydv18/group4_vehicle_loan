@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+      <%@ page isELIgnored="false" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -72,10 +74,13 @@
                                 <a href="UserDashboard.jsp" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="loantrack"><i class="fa fa-bar-chart-o fa-fw"></i>Loan Status</a>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Loan Status</a>
                             
                                 <!-- /.nav-second-level -->
                             </li>
+                           
+                           
+                            
                             </li>
                        
                             
@@ -95,7 +100,7 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-               We welcome you to our portal... 
+              Your Status is ${loanStatus}.
                     </div>
                     
                             

@@ -105,7 +105,6 @@ public void saveLoanOffer(LoanOffer lo) {
 	public void approve(int userId ){  	
 	    String sql="update GR4_Loan_Details set GLD_STATUS='APPROVED' where gld_gud_id="+userId+" ";  
 	     jdbcTemplate.update(sql);  
-	
 	}
 	
 	//to reject the loan of the user

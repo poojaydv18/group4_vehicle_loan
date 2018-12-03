@@ -205,7 +205,7 @@ else{
 
 
 <label><i class="fa fa-user" aria-hidden="true"></i> Existing EMI</label></br>
-    <input  type="number" min="1"  max="100000000" oninput="validity.valid||(value='');" pattern="[1-9]{4-9}" title="enter number format"  id="existingemi" name="Existing EMI" placeholder="Existing EMI" ><br><br>
+    <input  type="number" min="0"  max="100000000" oninput="validity.valid||(value='');" pattern="[1-9]{4-9}" title="enter number format"  id="existingemi" name="Existing EMI" placeholder="Existing EMI" value="0" ><br><br>
 <hr>
 <div style="background-color:black;color:white;padding:20px;">
 <h4>Contact Details</h4>
