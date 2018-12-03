@@ -59,23 +59,13 @@
 <tr>
 <th>Status</th><td>${emp.status}</td>  </tr>
 
- <form method="POST" action="clientupdate">    
 
-<tr>
-<th>User Id</th><td><input type="number" id="userId" name="userId"></td>  </tr>
-<tr>
-<th>Set Status</th><td><input type="text" id="status" name="status"></td>  </tr>
-
- <tr>    
-          <td> </td>    
-          <td><input type="submit" value="Update Client" /></td>    
-         </tr>  
 
    </c:forEach> 
-      </form> 
+
    </table>  
    <br>  
-<%--  
-   <a href="approveApplication/${emp.userId }">Approve</a> --%>
+ 
+   <a href="../viewclient">Back</a>
 </body>
 </html>

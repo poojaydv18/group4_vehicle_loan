@@ -32,6 +32,7 @@ input[type=text], input[type=password], input[type=number] {
 input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
     background-color: #ddd;
     outline: none;
+    
 }
 input[type=submit] {
     width: 100%;

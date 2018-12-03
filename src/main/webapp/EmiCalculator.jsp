@@ -8,28 +8,33 @@
 <title>EMI Calculator</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <style>
+input:invalid {
+  color: red;
+}
 #emicalc{
     display: none;
 }
-
-
-button {
-    background-color: gray;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+.button {
+    background-color: BLACK;
     border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
     cursor: pointer;
-    width: 100%;
 }
 
-button:hover {
-    opacity: 0.8;
-}
+
+.button4 {border-radius: 12px;}
+
+
 
 body, html {
     height: 100%;
-    margin: 0;
+    margin: auto;
     /* The image used */
     background-image: url("images/bg1.png");
     /* Full height */
@@ -40,9 +45,10 @@ body, html {
     background-size: cover;
     }
 form {border: 3px solid #f1f1f1;
-width:40%;
+width:30%;
+height:450px;
 margin: auto ;
-padding: 100px;
+padding: 80px;
 color: white;
 background-color:#1C3653;}
 
@@ -69,7 +75,7 @@ button {
     width: 100%;
 }
 
-input[type=text] {
+input[type=text],input[type=number] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -90,7 +96,7 @@ input[type=text] {
                 var tenure = document.formval.tenure.value; // pick tenure value from from..
                 var tenureinmonths = tenure * 12;
                 var compoundinterest = (principal * roi * Math.pow((1+roi),tenureinmonths))/(Math.pow((1+roi),tenureinmonths)-1); 
-                var emi = Math.ceil(compoundinterest * 100) / 100; // to calculate
+                var emi = Math.ceil(compoundinterest * 100) / 100; //
     			if(principal>=0 && roi>=0 && tenure>=0){
                 document.formval.fieldemi.value = emi.toFixed(2);     // to assign value in emi as fixed upto two decimal..
     			}
@@ -101,25 +107,25 @@ input[type=text] {
 </head>
 <body>
 
-<br> </br>
+<br> 
 	<form name="formval">
 		<table cellpadding=3>
-			<caption>
-			<center>	<a href="index.jsp">	<i class="fa fa-home fa-fw fa-5x" aria-hidden="true"></i></a></center>
-			<br> <br>
-				<b><u>EMI Calculator</u></b>
-			</caption>
+
+			<center>	<a href="index.jsp">	<i class="fa fa-home fa-fw fa-4x" aria-hidden="true"style="color:BLACK"></i></a></center>
+			
+				<h2><b><u><CENTER>EMI CALCULATOR</CENTER></u></b></h2>
+
 			<tr>
 				<td>Loan Amount :</td>
-				<td><input name="principal_amt" type="text"></td>
+				<td><input name="principal_amt"  type="number" min="1" max="100000000" oninput="validity.valid||(value='');"  pattern="[1-9]{4-9}"></td>
 			</tr>
 			<tr>
 				<td>Tenure(in years) :</td>
-				<td><input name="tenure" type="text"></td>
+				<td><input name="tenure" type="number" min="1" max="100000000" oninput="validity.valid||(value='');"  pattern="[1-9]{4-9}"></td>
 			</tr>
 				 <tr>
 				<td>Rate of interest :</td>
-				<td><input name="rate" type="text"></td>
+				<td><input name="rate" type="text" min="1" max="100000000" oninput="validity.valid||(value='');"  pattern="[0-9]+(\.[0-9]{0,2})?%?"></td>
 			</tr>
 		<br>  <br>
 	
@@ -128,11 +134,13 @@ input[type=text] {
 				<td><input name="fieldemi" type="text"  id="emicalc" readonly></td>
 			</tr>
 			<tr>
-		<input type="button" name="calculate" value="Calculate"
-			onclick="emi(); myFunction();">
+		
 		</tr>
-		</table>	
+		</table>
+		<input type="button"  class="button button4"   name="calculate" value="Calculate"
+			onclick="emi(); myFunction();">	
 	</form>
+	
 <script>
 function myFunction() {
     var x = document.getElementById("emicalc");

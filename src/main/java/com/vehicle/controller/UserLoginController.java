@@ -13,7 +13,8 @@ import com.vehicle.model.UserLogin;
 public class UserLoginController {
 	
 	@Autowired
-	UserLoginDao uldao;
+	UserLoginDao uldao;//will inject dao from xml file
+	
 	
 	@RequestMapping("/UserLogin")
 	public ModelAndView login(ModelAndView model, @ModelAttribute UserLogin u) {

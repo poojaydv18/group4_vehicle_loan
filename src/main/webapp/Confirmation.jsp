@@ -51,6 +51,10 @@ body {
     
 }
 </style>
+<script type="text/javascript"  src="back.js"></script>
+
+
+
 </head>
 <body  background="images/bg1.png";>
 <div class="container">

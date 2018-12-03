@@ -16,7 +16,7 @@ package com.vehicle.dao;
 			return jdbcTemplate;
 		}
 		
-		
+		//to insert the data in the table 
 		public void saveIncome(IncomeDetails i) {
 			String getIncomeId="select GR4_INCOME_DETAILS_SEQ.nextval from dual";
 			int incomeId=getIncomeSeq(getIncomeId);
@@ -26,6 +26,8 @@ package com.vehicle.dao;
 			String sql= "insert into gr4_income_details values("+incomeId+","+uid+",'"+i.getTypeOfEmployment ()+"','"+i.getAnnualIncome()+"','"+i.getExistingEmi()+"')";
 			 jdbcTemplate.update(sql); 
 		}
+		
+		//to get the sequence of the user id 
 		private int getIncomeSeq(String query) {
 			int res=jdbcTemplate.queryForObject(query, int.class);
 			return res;

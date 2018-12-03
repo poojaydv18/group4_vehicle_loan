@@ -19,14 +19,15 @@ public class UserDetailDao implements IUserDetailDao {
 	    this.jdbcTemplate = jdbcTemplate;  
 	}
 	
-	public void saveData(UserDetails u) {
+	//to insert the user details and document in the table
+	public void saveData(UserDetails u,MultipartFile... files) {
 		System.out.println("inside dao save data");
 		String getUserId="select GR4_USER_DETAILS_SEQ.nextval from dual";
 		int userId=getUserSeq(getUserId);
-	/*	u.setUserId(userId);
-		u.setFilePath(saveFiles(u, files));*/
+		u.setUserId(userId);
+		u.setFilePath(saveFiles(u, files));
 
-		String sql= "insert into gr4_user_details values("+userId+",'"+u.getName()+"','"+u.getGender()+"','"+u.getAge()+"','"+u.getMobile()+"','"+u.getEmail()+"','"+u.getPassword()+"','"+u.getAddress()+"','"+u.getState()+"','"+u.getCity()+"','"+u.getPincode()+"','"+u.getQue()+"','"+u.getAns()+"')";
+		String sql= "insert into gr4_user_details values("+userId+",'"+u.getName()+"','"+u.getGender()+"','"+u.getAge()+"','"+u.getMobile()+"','"+u.getEmail()+"','"+u.getPassword()+"','"+u.getAddress()+"','"+u.getState()+"','"+u.getCity()+"','"+u.getPincode()+"','"+u.getQue()+"','"+u.getAns()+"','" + u.getFilePath()[0]+ "','" +  u.getFilePath()[1] + "','" +  u.getFilePath()[2] + "','" +  u.getFilePath()[3] + "')";
 		 jdbcTemplate.update(sql); 
 	}
 	private int getUserSeq(String query) {
@@ -35,9 +36,11 @@ public class UserDetailDao implements IUserDetailDao {
 		
 	}
 	
-	/*public String[] saveFiles(UserDetails u, MultipartFile[] files) {
+	
+	//to upload the docs in local server
+	public String[] saveFiles(UserDetails u, MultipartFile[] files) {
 		int i = 0;
-		String[] paths = new String[3];
+		String[] paths = new String[4];
 		for (MultipartFile file : files) {
 			
 
@@ -45,21 +48,16 @@ public class UserDetailDao implements IUserDetailDao {
 				byte[] bytes = file.getBytes();
 
 				// Creating the directory to store file
-				String rootPath = System.getProperty("catalina.home");
-				File dir = new File(rootPath + File.separator + "Docs" + File.separator + u.getUserId());
+/*				String rootPath = System.getProperty("catalina.home");
+*/				File dir = new File("D:\\" + File.separator + u.getUserId());
 				
-			
+			//create directory is not created
 				if (!dir.exists())
 				{
 					dir.mkdirs();
 				}
-				if (!dir.exists())
-					{
-					System.out.println("does not exists");
-					}
-
+				
 				// Create the file on server
-
 				File serverFile = null;
 				switch (i) {
 				case 0:
@@ -70,6 +68,9 @@ public class UserDetailDao implements IUserDetailDao {
 					break;
 				case 2:
 					serverFile = new File(dir.getAbsolutePath() + File.separator + "Pan.pdf");
+					break;
+				case 3:
+					serverFile = new File(dir.getAbsolutePath() + File.separator + "PaySlip.pdf");
 					break;
 				}
 				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
@@ -89,24 +90,30 @@ public class UserDetailDao implements IUserDetailDao {
 			}
 
 		}
-		return paths; // TODO return paths
+		return paths; // return paths
 	}
-	*/
-	public String getDocName(int index) {
-		String name;
-		switch(index){
-		   case 1: name="Photo";
-		            break;
-		   case 2: name="Aadhar_Card";
-		            break;  			
-		   case 3: name="Pan_Card";
-		            break;          
-		   case 4: name="Payslip";
-		            break;		       
-		   default : return "Apply for necessary document";
-		           
+	
+	// to get the file path from the table
+	public String getFilePath(int userId, int fileId) {
+		String colName = null;
+		switch(fileId) {
+		case 1: colName = "gud_photo";
+		break;
+		case 2: colName = "gud_aadhar";
+		break;
+		case 3: colName = "gud_pan";
+		break;
+		case 4: colName = "gud_paySlip";
+		break;
+		default: return "Error Something is Wrong";
 		}
-		return name;
+		String query = "Select "+colName+" from gr4_user_details where gud_Id="+userId;
+		
+		String filePath = jdbcTemplate.queryForObject(query,String.class);
+		System.out.println(filePath);
+		
+		return filePath; //return path
 	}
+
 	
 }

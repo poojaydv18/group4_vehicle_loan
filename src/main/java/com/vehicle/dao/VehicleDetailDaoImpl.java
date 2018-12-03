@@ -17,6 +17,8 @@ public class VehicleDetailDaoImpl implements IVehicleDetailDao {
 		return jdbcTemplate;
 	}
 	
+	
+	
 	public void saveVehicle(VehicleDetails u) {
 		
 		String getVehicleId="select GR4_VEHICLE_DETAILS_SEQ.nextval from dual";

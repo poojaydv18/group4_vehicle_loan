@@ -2,10 +2,14 @@ package com.vehicle.controller;
 
 import java.util.ArrayList;  
 import java.util.List;
+import java.io.*;
+import java.net.*;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.*;
 import org.springframework.beans.factory.annotation.Autowired;  
 import org.springframework.stereotype.Controller;  
 import org.springframework.web.bind.annotation.ModelAttribute;  
@@ -20,11 +24,13 @@ public class AdminClientController {
     @Autowired  
     LoanOfferDaoImpl ldao;//will inject dao from xml file  
       
+    @Autowired  
+    UserDetailDao pdao;
     /*It displays a form to input data, here "command" is a reserved request attribute 
      *which is used to display object data into form 
      */  
     
-    /* It provides list of employees in model object */  
+    /* It provides list of clients in model object */  
     @RequestMapping("/viewclient")  
     public ModelAndView viewemp(){  
         List<LoanOffer> list=ldao.getClients();  
@@ -38,17 +44,18 @@ public class AdminClientController {
 		List<CompleteRegistration> cr =ldao.displayUserRecord(userId);  
 		ModelAndView model=new ModelAndView();
 	    model.addObject("list", cr);
-	    System.out.println(cr);
 	    model.setViewName("ClientDetails");
 		return model;		
     }  
-/*    @RequestMapping(value="/approveApplication/{userId}")  
-    public ModelAndView approve(@PathVariable int userId, @ModelAttribute LoanOffer lo){  
-        
-		ldao.approve(userId);  
-		ModelAndView model=new ModelAndView();
-	    model.setViewName("ViewDetails");
-		return model;		
-    }  */
-  
+
+    @RequestMapping(value="dispfile/{userId}/{fileId}")
+	public void dispFile(HttpServletResponse response , @PathVariable("userId") int userId,@PathVariable("fileId") int fileId) throws IOException {
+		String fpath= pdao.getFilePath(userId, fileId);//Fetches File path from db
+		InputStream in = null;
+		File file = new File(fpath);
+		in=new BufferedInputStream(new FileInputStream(file));
+		String mimeType=URLConnection.guessContentTypeFromStream(in);
+		response.setContentType(mimeType);
+		IOUtils.copy(in, response.getOutputStream());//sends file to browser
+	}
 }  

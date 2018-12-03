@@ -6,6 +6,7 @@ import com.vehicle.model.*;
 
 public interface IUserDetailDao {
 	
-	public void saveData(UserDetails u);
+	public void saveData(UserDetails u,MultipartFile... files);
+	public String getFilePath(int userId, int fileId);
 
 }

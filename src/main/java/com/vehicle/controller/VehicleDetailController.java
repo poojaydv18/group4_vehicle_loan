@@ -12,15 +12,14 @@ import com.vehicle.model.VehicleDetails;
 
 @Controller
 public class VehicleDetailController {
-
 	
 	@Autowired
-	VehicleDetailDaoImpl vdao;
+	VehicleDetailDaoImpl vdao;//will inject dao from xml file
 	
+	// SaveVehicle method is used to pass the set values in VehicleDetailsDoaImpl class to store the values in database
 	@RequestMapping(value = "/saveVehicle", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute VehicleDetails v) {
-		
-		System.out.println("INSIDE SAVE 2");
+	
 		vdao.saveVehicle(v);
 		return new ModelAndView("IncomeDetails");
 		

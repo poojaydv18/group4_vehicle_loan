@@ -20,9 +20,17 @@ public class UserDetails {
 	private int pincode;
 	private String que;
 	private String ans;
+	private String[] filePath;
 
 	
 	
+	
+	public String[] getFilePath() {
+		return filePath;
+	}
+	public void setFilePath(String[] filePath) {
+		this.filePath = filePath;
+	}
 	public String getQue() {
 		return que;
 	}
@@ -75,8 +83,8 @@ public class UserDetails {
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password =password;
-		//this.password = MD5.getMd5(password);
+		//this.password =password;
+		this.password = MD5.getMd5(password);
 		}
 	
 	

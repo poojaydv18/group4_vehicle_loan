@@ -27,6 +27,8 @@ public class LoanOfferDaoImpl implements  ILoanOfferDao{
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
 	}
+	
+	//to insert the data in table
 public void saveLoanOffer(LoanOffer lo) {
 		
 		String getLoanId="select GR4_VEHICLE_DETAILS_SEQ.nextval from dual";
@@ -38,12 +40,15 @@ public void saveLoanOffer(LoanOffer lo) {
 		String sql="insert into gr4_loan_details values("+LoanId+","+uid+",'"+lo.getLoanAmount()+"','"+lo.getTenure()+"','"+lo.getInterestRate()+"','"+lo.getStatus()+"')";
 		jdbcTemplate.update(sql);
 	}
+
+//to get the sequence of loan id
 	private int getLoanSeq(String query) {
 		int res=jdbcTemplate.queryForObject(query, int.class);
 		return res;
 		
 	}
 	
+	//
 	public List<LoanOffer> getClients(){  
 	    return jdbcTemplate.query("select * from  GR4_Loan_Details",new RowMapper<LoanOffer>(){  
 	        public LoanOffer mapRow(ResultSet rs, int row) throws SQLException {  
@@ -97,6 +102,8 @@ public void saveLoanOffer(LoanOffer lo) {
 		});
 			
 	   }
+	
+	//to approve the loan of the user
 	public void approve(int userId ){  
 		System.out.println("Inside Loan Offer Dao");
 	
@@ -105,5 +112,16 @@ public void saveLoanOffer(LoanOffer lo) {
 	     jdbcTemplate.update(sql);  
 	
 	}
+	
+	//to reject the loan of the user
+	public void reject(int userId ){  
+		System.out.println("Inside Loan reject Dao");
+	
+	    String sql="update GR4_Loan_Details set GLD_STATUS='REJECTED' where gld_gud_id="+userId+" ";  
+	    System.out.println("status query  updated ");
+	     jdbcTemplate.update(sql);  
+	
+	}
+	
 }
 

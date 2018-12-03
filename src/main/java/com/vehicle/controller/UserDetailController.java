@@ -17,15 +17,16 @@ import com.vehicle.model.UserDetails;
 public class UserDetailController {
 	
 	@Autowired
-	UserDetailDao pdao;
+	UserDetailDao pdao;//will inject dao from xml file
 	
+	// Save method is used to pass the set value in UserDetailDoa class to store the values in database
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public ModelAndView save(@ModelAttribute UserDetails u) {
-		
-		pdao.saveData(u);
-		return new ModelAndView("VehicleDetails");
-		
+		public ModelAndView save(@RequestParam("files") MultipartFile[] files,@ModelAttribute UserDetails u) {
+		pdao.saveData(u,files);
+		return new ModelAndView("VehicleDetails");	
 	}
+	
+	
 	
 
 }

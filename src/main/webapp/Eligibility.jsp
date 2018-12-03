@@ -8,13 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-
- 
-
+input:invalid {
+  color: red;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-   background: url(images/bgcar.jpg) no-repeat center center fixed; 
+  
+   background: url("images/bg1.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,6 +31,7 @@ body {
 
 .content {
   padding: 16px;
+  background-color:white;
 }
 
 .sticky {
@@ -85,7 +87,14 @@ if(localStorage){
             var str_email = $("#email").val();
 
             var str_yearlyemi= +str_existingemi * 12;
+            if (str_yearlysalary >= str_yearlyemi){
+            	
+            
             var str_loan = (+str_yearlysalary - str_yearlyemi)*4 ; 
+            }
+            else{
+            	var str_loan=0;
+            }
             var str_eligibleloan = Math.min(str_loan, str_exshowroomprice);
 
             // Store data
@@ -117,12 +126,13 @@ else{
 </head>
 <body>
 <div class="header" id="myHeader" style="width:15%;">
-  <a href="index.jsp"><h2>Vehicle Loan <br><i class="fa fa-car" aria-hidden="true"></i></h2></a>
+  	<a href="index.jsp">	<i class="fa fa-home fa-fw fa-4x" aria-hidden="true"style="color:white"></i></a>
 </div>
-<div class="content" style="width:60%; margin:auto">
+<div>
+<div class="content" style="width:50%; margin:auto">
 <form method="post" action="Confirmation.jsp">
 
-  <div class="container" style="width:100%;">
+  <div class="container" style="width:95%;">
   
 <div style="background-color:black;color:white;padding:20px;">
 <h4> Vehicle Details:</h4>
@@ -149,10 +159,10 @@ else{
  
  
 <label><i class="fa fa-rupee-sign"></i> Ex-Showroom Price:</label>
-    <input type="number" pattern="[1-9]{4-9}" id="exshowroomprice"  name="Ex-Showroom Price" placeholder="Enter Value" title="enter number format" required><br><br>
+    <input type="number" min="1" max="100000000"  oninput="validity.valid||(value='');" pattern="[1-9]{4-9}" id="exshowroomprice"  name="Ex-Showroom Price" placeholder="Enter Value" title="enter number format" required><br><br>
 
 <label><i class="fa fa-rupee-sign"></i> On Road Price</label>
-    <input type="number" pattern="[1-9]{4-9}" id="onroadprice" name="On Road Price" placeholder="Enter Value" title="enter number format" required><br>
+    <input type="number" min="1" max="100000000" oninput="validity.valid||(value='');"  pattern="[1-9]{4-9}" id="onroadprice" name="On Road Price" placeholder="Enter Value" title="enter number format" required><br>
    <hr>
 
 <div style="background-color:black;color:white;padding:20px;">
@@ -160,7 +170,7 @@ else{
 </div>
 <br>
 <label><i class="fa fa-user" aria-hidden="true"></i> Name:</label>
-   <input type="text" id="user" name="user" placeholder="Enter Full Name" required><br><br>
+   <input type="text" id="user" name="user" placeholder="Enter Full Name" required  maxlength="32" pattern="[A-Za-z' ]{1,32}"><br><br>
 
     
 
@@ -191,11 +201,11 @@ else{
 </div>
 <br><br>
 <label><i class="fa fa-rupee-sign"></i> Yearly Salary:</label>
-    <input type="number" pattern="[1-9]{4-9}" title="enter number format" id="yearlysalary" name="Yearly Salary" placeholder="Enter Yearly Salary" required><br><br>
+    <input  type="number" min="1" max="100000000"  oninput="validity.valid||(value='');" pattern="[1-9]{4-9}"  title="enter number format" id="yearlysalary" name="Yearly Salary" placeholder="Enter Yearly Salary" required><br><br>
 
 
 <label><i class="fa fa-user" aria-hidden="true"></i> Existing EMI</label></br>
-    <input type="number" pattern="[1-9]{4-9}" title="enter number format"  id="existingemi" name="Existing EMI" placeholder="Existing EMI" ><br><br>
+    <input  type="number" min="1"  max="100000000" oninput="validity.valid||(value='');" pattern="[1-9]{4-9}" title="enter number format"  id="existingemi" name="Existing EMI" placeholder="Existing EMI" ><br><br>
 <hr>
 <div style="background-color:black;color:white;padding:20px;">
 <h4>Contact Details</h4>

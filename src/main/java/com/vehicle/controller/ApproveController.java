@@ -11,14 +11,15 @@ import com.vehicle.model.LoanOffer;
 import com.vehicle.dao.*;
 
 @Controller
-public class ApproveContoller {
+public class ApproveController {
 	   @Autowired  
-	    LoanOfferDaoImpl ldao;
+	    LoanOfferDaoImpl ldao;//will inject dao from xml file
 	   
-    @RequestMapping(value="/clientupdate/{userId}")  
-    public ModelAndView approve( @ModelAttribute LoanOffer lo){  
+    @RequestMapping(value="/clientapprove/{userId}")  
+    public ModelAndView approve(@PathVariable int userId){  
         
-		ldao.approve(lo.getUserId());  
+		ldao.approve(userId);  
 		return new ModelAndView("redirect:../viewclient");  
     }  
+   
 }

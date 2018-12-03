@@ -25,6 +25,7 @@
 
         <!-- Custom Fonts -->
         <link href="admincss/font-awesome.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript"  src="back.js"></script>
 
   
     </head>

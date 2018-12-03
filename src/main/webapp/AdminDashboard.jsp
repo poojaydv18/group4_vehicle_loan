@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>Admin Dashboard</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="admincss/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">Admin</a>
+                    <a class="navbar-brand" href="#">Admin</a>
                 </div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -55,14 +55,14 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                    <li><a href="index.jsp"><i class="fa fa-home fa-fw"></i> Website</a></li>
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
                     
                         
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="index.jsp">
                             <i class="fa fa-user fa-fw"></i> Logout </b>
                         </a>
                        
@@ -75,7 +75,7 @@
                         <ul class="nav" id="side-menu">
                             
                             <li>
-                                <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Clients</a>

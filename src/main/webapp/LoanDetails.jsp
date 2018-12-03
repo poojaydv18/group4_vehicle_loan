@@ -5,11 +5,16 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript"  src="back.js"></script>
+
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+    background-color: teal;
 }
+form{
+width:50%;
+margin:auto;}
 
 * {
     box-sizing: border-box;
@@ -34,6 +39,20 @@ input[type=text], input[type=password] {
 input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
 }
 
 /* Overwrite default styles of hr */
@@ -98,16 +117,17 @@ $( window ).load(function() {
                 
                 <div class="signup-form">
                   <!--   <form class="register-form" id="register-form" method="POST" > -->
-                       
+                                       <div style="background-color:black;color:white;padding:20px;">
 			<h2>Loan Details</h2>
-                        
+                        </div>
+                        <br>
                             <div class="form-group">
                                 <label for="loan amount">Loan Amount :</label>
                                 <input type="text"  id="loanamount"name="loanAmount" required readonly/>
                             </div>
                   
 				<div class="form-group">
-                                <label for="Tenure">Tenure :</label>
+                                <label for="Tenure">Tenure( in months) :</label>
                                 <input type="text" id="tenure" name="tenure" required/>
                             </div>
                   		<div class="form-group">
@@ -122,8 +142,8 @@ $( window ).load(function() {
 			
 			
 			   <div class="form-submit">
-                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
-                            <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+			  <input type=submit class="save" value="Submit">
+
                         </div>
 
 

@@ -11,6 +11,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script type="text/javascript"  src="back.js"></script>
 
         <title>Forget Password</title>
 
@@ -54,19 +55,21 @@
                                     
                                     <div class="form-group"><div class="wrap-input100 validate-input" >
                                         <label><i class="fa fa-envelope" aria-hidden="true"></i>New Password</label>
-                                        <input class="form-control" type="text" name="password"><br>
+                                        <input class="form-control" type="password" id="password" name="password" onkeyup='check();'><br>
                                   </div> 
                                     </div>
                                      <div class="form-group"><div class="wrap-input100 validate-input" >
                                         <label><i class="fa fa-envelope" aria-hidden="true"></i>Confirm Password</label>
-                                        <input class="form-control"  type="text"><br>
+                                        <input class="form-control" type="password" name="confirm_password" id="confirm_password"  onkeyup='check();' /> 
                                   </div> 
+                                    <span id='message'></span>
+
                                     </div>
 
 <div class="capbox">
 
-<div id="CaptchaDiv"></div>
-
+<b><div id="CaptchaDiv"></div></b>
+<br>
 <div class="capbox-inner">
 
 Type the above number:<br>
@@ -134,11 +137,21 @@ return true;
 return false;
 }
 }
-
 // Remove the spaces from the entered and generated code
 function removeSpaces(string){
 return string.split(' ').join('');
 }
 </script>
+<script type="text/javascript">
+var check = function() {
+	  if (document.getElementById('password').value ==
+	    document.getElementById('confirm_password').value) {
+	    document.getElementById('message').style.color = 'green';
+	    document.getElementById('message').innerHTML = 'matching';
+	  } else {
+	    document.getElementById('message').style.color = 'red';
+	    document.getElementById('message').innerHTML = 'not matching';
+	  }
+	}</script>
 
 </html>

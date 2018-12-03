@@ -44,12 +44,14 @@
                                     </div>
                                     </div>
                                     <div class="form-group"><label><i class="fa fa-key" aria-hidden="true"></i> Password</label>
-                                        <input class="form-control" placeholder="Password" name="password" type="password" oninvalid="('Password Can Not be Empty')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                        <input class="form-control" placeholder="Password" id="password" name="password" type="password" oninvalid="('Password Can Not be Empty')" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                  <br>
+                                   <input type="checkbox" onclick="myFunction()">Show Password
                                     </div>
                                                                    <div class="capbox">
 
-<div id="CaptchaDiv"></div>
-
+<b><div id="CaptchaDiv"></div></b>
+<br>
 <div class="capbox-inner">
 
 Type the above number:<br>
@@ -133,5 +135,14 @@ function removeSpaces(string){
 return string.split(' ').join('');
 }
 </script>
-
+ <script>
+function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>   
 </html>

@@ -11,13 +11,14 @@ import com.vehicle.model.Suggestion;
 import com.vehicle.model.UserDetails;
 import com.vehicle.model.UserLogin;
 
-public class ForgotPasswordDao {
+public class ForgotPasswordDao implements  IForgotPasswordDao {
 	private JdbcTemplate jdbcTemplate;  
 	  
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {  
 	    this.jdbcTemplate = jdbcTemplate;  
 	}
 	
+	//to retrieve the security que from database
 	public List<UserDetails> getSecurity(UserDetails ul){  
 	    return jdbcTemplate.query("select * from gr4_user_details where GUD_EMAIL='" + ul.getEmail() +"'",new RowMapper<UserDetails>(){  
 	        public UserDetails mapRow(ResultSet rs, int row) throws SQLException {  
@@ -29,6 +30,7 @@ public class ForgotPasswordDao {
 	    });  
 	}
 	
+	//to check whether the ans is valid or not
 	public boolean validateAnswer(UserDetails ud)
 	{
 		String validateAnswerQuery = "select * from gr4_user_details where GUD_EMAIL='" + ud.getEmail() + "' and GUD_ANS='" + ud.getAns() +"'";
@@ -37,6 +39,8 @@ public class ForgotPasswordDao {
 		return user.size() > 0 ? true : false;
 
 	}
+	
+	//change the password of user if user forgot the password
 	public int forgetchangepassowrd(UserDetails ud){    
 		System.out.println(ud.getEmail()+' '+ud.getPassword());
 	    String sql="update gr4_user_details set gud_password='"+ud.getPassword()+"' where GUD_EMAIL='"+ud.getEmail()+"' ";    
@@ -44,6 +48,8 @@ public class ForgotPasswordDao {
 	} 
 		
 }
+
+
 class UserAnswerMapper implements RowMapper<UserDetails> {
 	  public UserDetails mapRow(ResultSet rs, int arg1) throws SQLException {
 	    UserDetails user = new UserDetails();

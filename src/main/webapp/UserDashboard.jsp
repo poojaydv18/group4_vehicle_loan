@@ -59,21 +59,13 @@
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
-                    <li class="dropdown navbar-inverse">
-                       
+                    
                         
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                           <i class="fa fa-gear fa-fw"></i> Settings <b class="caret"></b>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="index.jsp">
+                            <i class="fa fa-user fa-fw"></i> Logout </b>
                         </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="PasswordChange.html"><i class="fa fa-key" aria-hidden="true"></i>Change Password</a>
-                            </li>
-                          
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                            </li>
-                        </ul>
+                       
                     </li>
                 </ul>
                 <!-- /.navbar-top-links -->

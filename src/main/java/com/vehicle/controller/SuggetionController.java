@@ -15,7 +15,7 @@ import com.vehicle.model.Suggestion;
 public class SuggetionController {
 
 	@Autowired
-	SuggetionDao sdao;
+	SuggetionDao sdao;//will inject dao from xml file
 	
 	@RequestMapping(value = "/suggestion", method = RequestMethod.POST)
 	public @ResponseBody ModelAndView save(@ModelAttribute Suggestion u) {

@@ -1,7 +1,8 @@
 package com.vehicle.controller;
 
-import com.vehicle.model.*;
-import com.vehicle.dao.*;
+	import com.vehicle.model.*;
+	import com.vehicle.dao.*;
+
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Controller;
 	import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,12 +13,11 @@ import com.vehicle.dao.*;
 	public class IncomeDetailController {
 		
 		@Autowired
-		IncomeDetailDaoImpl idao;
+		IncomeDetailDaoImpl idao;//will inject dao from xml file
 		
+		// SaveIncome method is used to pass the set values in IncomeDetailsDoaImpl class to store the values in database
 		@RequestMapping(value = "/saveIncome", method = RequestMethod.POST)
 		public ModelAndView save(@ModelAttribute IncomeDetails i) {
-			
-			System.out.println("INSIDE SAVE 2");
 			idao.saveIncome(i);
 			return new ModelAndView("LoanDetails");
 			

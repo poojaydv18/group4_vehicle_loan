@@ -54,4 +54,9 @@
    <location>/ErrorPage.jsp</location>
 </error-page>
 
+<error-page>
+   <exception-type>java.lang.SQLException</exception-type >
+   <location>/ErrorPage.jsp</location>
+</error-page>
+
 </web-app>

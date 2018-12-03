@@ -11,6 +11,7 @@ public class SuggetionDao {
 	    this.jdbcTemplate = jdbcTemplate;  
 	}
 	
+	//store the suggestion
 	public void saveData(Suggestion s) {
 		System.out.println("inside dao save data");
 		String getSuggetionId="select GR4_SUGGETION_SEQ.nextval from dual";
@@ -18,6 +19,8 @@ public class SuggetionDao {
 		String sql= "insert into gr4_suggetion values("+suggetionId+",'"+s.getName()+"','"+s.getMobile()+"','"+s.getEmail()+"','"+s.getSuggestion()+"')";
 		 jdbcTemplate.update(sql); 
 	}
+	
+	//to get the sequence number for suggestion id
 	private int getSuggetionSeq(String query) {
 		int res=jdbcTemplate.queryForObject(query, int.class);
 		return res;

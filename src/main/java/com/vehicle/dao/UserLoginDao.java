@@ -19,6 +19,8 @@ public class UserLoginDao {
 		return jdbcTemplate;
 	}
 	
+	
+	//validate user by validate user credential 
 	public boolean validateUser(UserLogin u)
 	{
 

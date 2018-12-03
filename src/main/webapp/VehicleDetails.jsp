@@ -4,12 +4,16 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript"  src="back.js"></script>
+
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+    background-color: teal;
 }
-
+form{
+width:50%;
+margin:auto;}
 * {
     box-sizing: border-box;
 }
@@ -94,8 +98,11 @@ $( window ).load(function() {
 
 <form action="saveVehicle" method="POST">
   <div class="container">
+                  <div style="background-color:black;color:white;padding:20px;">
+  
     <h1>Vehicle Details</h1>
-    
+    </div>
+    <br>
     <hr>
 
     <label for="Car Make"><b>Car Make</b></label>

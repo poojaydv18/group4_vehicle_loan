@@ -109,7 +109,10 @@ return true;
                                     </div>
                                     <div class="form-group">
                                     <label><i class="fa fa-key" aria-hidden="true"></i> Password</label>
-                                        <input class="form-control" placeholder="Password" name="adminpassword" type="password" oninvalid="this.setCustomValidity('Password Can Not be Empty')">
+                                        <input class="form-control" placeholder="Password" id="password" name="adminpassword" type="password" oninvalid="this.setCustomValidity('Password Can Not be Empty')">
+                                  
+                                  <br>
+                                   <input type="checkbox" onclick="myFunction()">Show Password
                                     </div>
                                     <div class="capbox">
 
@@ -139,7 +142,16 @@ Type the above number:<br>
             </div>
         </div>
 
-        
+     <script>
+function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>   
         
         <script type="text/javascript">
 

@@ -16,6 +16,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script type="text/javascript"  src="back.js"></script>
     
 <script type="text/javascript">
 // Check if the localStorage object exists
@@ -42,7 +43,7 @@ $( window ).load(function() {
 <style>
 
 form{
-width:80%;
+width:100%;
     background-color: teal;
 }
 input:invalid {
@@ -196,7 +197,7 @@ a {
         <div class="container" >
             <div class="signup-content">           
                 <div class="signup-form">
-                <form method="POST" class="register-form" id="register-form" action="save"  >
+                <form method="POST" class="register-form" id="register-form" action="save"  enctype="multipart/form-data">
                 <div style="background-color:black;color:white;padding:20px;">
                 
                         <h2>Personal Details</h2>
@@ -341,9 +342,9 @@ myInput.onkeyup = function() {
       
        <label for="state"><b>State</b></label>
       <div id="selection">
-        <select id="listBox" onchange='selct_district(this.value)'></select>
+        <select id="listBox" name="state" onchange='selct_district(this.value)'></select>
 	<label for="city"><b>City</b></label>
-        <select id='secondlist'></select>
+        <select id='secondlist' name="city"></select>
       </div>
       <div id="dumdiv" align="center" style=" font-size: 10px;color: #dadada;">
         <a id="dum" style="padding-right:0px; text-decoration:none;color: green;text-align:center;" href="http://www.hscripts.com"></a>
@@ -359,7 +360,7 @@ myInput.onkeyup = function() {
                             <input type="text" pattern="[1-9][0-9]{5}"  name="pincode" id="pincode" />
                         </div>
                         
-<!--                                                     <div class="form-group">
+                          <div class="form-group">
           <label class="control-label">Photo Upload</label> <font style= "color:red;">*</font>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
@@ -386,8 +387,16 @@ myInput.onkeyup = function() {
           </div>
           <div id="fileList"></div>
         </div>
-                       -->  
-                        
+
+                  <div class="form-group">
+          <label class="control-label">Upload Pay Slip</label> <font style= "color:red;">*</font>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
+            <input class="form-control" name="files" type="file" required="required" id="file"  onchange="javascript:updateList();">
+          </div>
+          <div id="fileList"></div>
+        </div>
+                  
 			
 			  <input type=submit class="save" value="Submit">
 <!-- <button id="myBtn" class="row" >Check Eligibility</button>

@@ -18,20 +18,17 @@ import com.vehicle.dao.*;
 @Controller
 public class PasswordController {
 	   @Autowired 
-	   ForgotPasswordDao fpdao;
+	   ForgotPasswordDao fpdao;//will inject dao from xml file
 	   
 	   @RequestMapping("/forgetpassword")  
 	    public ModelAndView forgetpassword( @ModelAttribute UserDetails ul){  
 	        List<UserDetails> list=fpdao.getSecurity(ul);  
-	        System.out.println("inside forg password");
-	        System.out.println(list.get(0).getEmail()+"\t"+list.get(0).getQue());
 	        return new ModelAndView("ForgetPasswordSecurity","list",list);  
 	    } 
 	   @RequestMapping("/checksecurityanswer")
 		public ModelAndView login(ModelAndView model, @ModelAttribute UserDetails ud, HttpServletRequest request) {
 	       HttpSession session = request.getSession();
 	       session.setAttribute("email", ud.getEmail());
-		   System.out.println("inside security");
 			if (fpdao.validateAnswer(ud)) {
 				model.addObject("user",ud);
 				model.setViewName("ForgotChangePassword");
