@@ -54,10 +54,7 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean> 
-		<bean id="iddao" class="com.vehicle.dao.IdentityDetailDaoImpl">
-		<property name="jdbcTemplate" ref="jdbcTemplate">
-		</property>
-	</bean>
+
 	<bean id="uldao" class="com.vehicle.dao.UserLoginDao">
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
