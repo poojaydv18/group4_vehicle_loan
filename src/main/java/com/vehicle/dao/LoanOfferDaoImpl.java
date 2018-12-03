@@ -33,7 +33,6 @@ public void saveLoanOffer(LoanOffer lo) {
 		
 		String getLoanId="select GR4_VEHICLE_DETAILS_SEQ.nextval from dual";
 		int LoanId=getLoanSeq(getLoanId);
-		System.out.println(LoanId);
 		String query="select max(gud_id) from gr4_user_details";
 		int uid=jdbcTemplate.queryForObject(query, Integer.class);
 			
@@ -48,7 +47,7 @@ public void saveLoanOffer(LoanOffer lo) {
 		
 	}
 	
-	//
+	// to get list of clients and their status
 	public List<LoanOffer> getClients(){  
 	    return jdbcTemplate.query("select * from  GR4_Loan_Details",new RowMapper<LoanOffer>(){  
 	        public LoanOffer mapRow(ResultSet rs, int row) throws SQLException {  
@@ -63,9 +62,10 @@ public void saveLoanOffer(LoanOffer lo) {
 	        }  
 	    });  
 	}
+	
+	// to display complete registration data on admin portal 
 	public List<CompleteRegistration> displayUserRecord(int userId)
 	   {
-		System.out.println("Inside Display User Record");
 		String query = "select u.GUD_ID, u.GUD_NAME, u.GUD_GENDER, u.GUD_AGE, u.GUD_MOBILE, u.GUD_EMAIL, u.GUD_PASSWORD, u.GUD_ADDRESS, u.GUD_STATE, u.GUD_CITY, u.GUD_PINCODE, v.GVD_BRAND,v.GVD_MODEL,v.GVD_EX_SHOWROOM_PRICE, i.GID_EMPLOYMENT_TYPE,i.GID_ANNUAL_INCOME,i.GID_EXSITING_EMI , l.GLD_ID,l.GLD_LOAN_AMT,l.GLD_TENURE,l.GLD_ROI,l.GLD_STATUS from gr4_user_details u INNER JOIN gr4_vehicle_details v ON u.gud_id = v.gvd_gud_id INNER JOIN gr4_income_details i ON u.gud_id = i.gid_gud_id INNER JOIN gr4_loan_details l ON u.gud_id = l.gld_gud_id where GUD_id =  '"+userId+"'";
 			return jdbcTemplate.query(query, new RowMapper<CompleteRegistration>(){
 
@@ -94,9 +94,7 @@ public void saveLoanOffer(LoanOffer lo) {
 				cr.setTenure(rs.getInt(20));
 				cr.setInterestRate(rs.getFloat(21));
 				cr.setStatus(rs.getString(22));
-	           System.out.println("inside dao"+cr.getEmail());
-	           System.out.println("inside dao"+cr.getUserId());
-	               
+	           
 	           return cr;
 			}	
 		});
@@ -104,21 +102,17 @@ public void saveLoanOffer(LoanOffer lo) {
 	   }
 	
 	//to approve the loan of the user
-	public void approve(int userId ){  
-		System.out.println("Inside Loan Offer Dao");
-	
+	public void approve(int userId ){  	
 	    String sql="update GR4_Loan_Details set GLD_STATUS='APPROVED' where gld_gud_id="+userId+" ";  
-	    System.out.println("status query  updated ");
 	     jdbcTemplate.update(sql);  
 	
 	}
 	
 	//to reject the loan of the user
 	public void reject(int userId ){  
-		System.out.println("Inside Loan reject Dao");
 	
 	    String sql="update GR4_Loan_Details set GLD_STATUS='REJECTED' where gld_gud_id="+userId+" ";  
-	    System.out.println("status query  updated ");
+	 
 	     jdbcTemplate.update(sql);  
 	
 	}

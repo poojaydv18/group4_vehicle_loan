@@ -37,7 +37,7 @@ public class AdminClientController {
         return new ModelAndView("ViewClients","list",list);  
     }  
     
- 
+ // this will get user id and based on that display complete registration data to admin
     @RequestMapping(value="/editclient/{userId}")  
     public ModelAndView edit(@PathVariable int userId){  
         
@@ -47,7 +47,7 @@ public class AdminClientController {
 	    model.setViewName("ClientDetails");
 		return model;		
     }  
-
+// to display document to the admin submitted by user at the time of registration.
     @RequestMapping(value="dispfile/{userId}/{fileId}")
 	public void dispFile(HttpServletResponse response , @PathVariable("userId") int userId,@PathVariable("fileId") int fileId) throws IOException {
 		String fpath= pdao.getFilePath(userId, fileId);//Fetches File path from db

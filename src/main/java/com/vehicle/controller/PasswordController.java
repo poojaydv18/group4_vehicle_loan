@@ -19,12 +19,13 @@ import com.vehicle.dao.*;
 public class PasswordController {
 	   @Autowired 
 	   ForgotPasswordDao fpdao;//will inject dao from xml file
-	   
+	   // this will redirect to the forgot security page and will fetch the security question based on user's email
 	   @RequestMapping("/forgetpassword")  
 	    public ModelAndView forgetpassword( @ModelAttribute UserDetails ul){  
 	        List<UserDetails> list=fpdao.getSecurity(ul);  
 	        return new ModelAndView("ForgetPasswordSecurity","list",list);  
 	    } 
+	   // this will check the security answer given by user 
 	   @RequestMapping("/checksecurityanswer")
 		public ModelAndView login(ModelAndView model, @ModelAttribute UserDetails ud, HttpServletRequest request) {
 	       HttpSession session = request.getSession();
@@ -37,6 +38,7 @@ public class PasswordController {
 			}
 			return model;
 		}	
+	   //after successful input of security answer user will get access to change the password
 	   @RequestMapping("/forgetchangepassword")  
 	    public ModelAndView forgetchangepassword( @ModelAttribute UserDetails ul){  
 	        fpdao.forgetchangepassowrd(ul); 

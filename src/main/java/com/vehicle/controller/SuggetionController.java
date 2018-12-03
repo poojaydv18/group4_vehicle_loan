@@ -16,11 +16,11 @@ public class SuggetionController {
 
 	@Autowired
 	SuggetionDao sdao;//will inject dao from xml file
-	
+	//this will get user's queries and feedback and store in the database.
 	@RequestMapping(value = "/suggestion", method = RequestMethod.POST)
 	public @ResponseBody ModelAndView save(@ModelAttribute Suggestion u) {
 		
-		System.out.println("Hellooooooo");
+		
 		sdao.saveData(u);
 		return new ModelAndView("index");
 		

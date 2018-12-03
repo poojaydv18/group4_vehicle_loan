@@ -14,7 +14,7 @@ import com.vehicle.dao.*;
 public class RejectController {
 	   @Autowired  
 	    LoanOfferDaoImpl ldao; //will inject dao from xml file
-	   
+	   // this will accept the userid and give admin access to reject the application.
     @RequestMapping(value="/clientreject/{userId}")  
     public ModelAndView reject(@PathVariable int userId){  
         

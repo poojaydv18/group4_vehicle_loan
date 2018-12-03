@@ -14,7 +14,7 @@ import com.vehicle.dao.*;
 public class ApproveController {
 	   @Autowired  
 	    LoanOfferDaoImpl ldao;//will inject dao from xml file
-	   
+	   // this controller will accept the admin request to approve the registration and display the same back to admin.
     @RequestMapping(value="/clientapprove/{userId}")  
     public ModelAndView approve(@PathVariable int userId){  
         

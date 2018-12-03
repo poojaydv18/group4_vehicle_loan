@@ -101,7 +101,7 @@ public class UserDetailDao implements IUserDetailDao {
 		break;
 		case 2: colName = "gud_aadhar";
 		break;
-		case 3: colName = "gud_pan";
+		case 3: colName = "gud_pancard";
 		break;
 		case 4: colName = "gud_paySlip";
 		break;
@@ -110,7 +110,6 @@ public class UserDetailDao implements IUserDetailDao {
 		String query = "Select "+colName+" from gr4_user_details where gud_Id="+userId;
 		
 		String filePath = jdbcTemplate.queryForObject(query,String.class);
-		System.out.println(filePath);
 		
 		return filePath; //return path
 	}
