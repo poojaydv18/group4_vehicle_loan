@@ -35,14 +35,12 @@ public class ForgotPasswordDao implements  IForgotPasswordDao {
 	{
 		String validateAnswerQuery = "select * from gr4_user_details where GUD_EMAIL='" + ud.getEmail() + "' and GUD_ANS='" + ud.getAns() +"'";
 		List<UserDetails> user = jdbcTemplate.query(validateAnswerQuery, new UserAnswerMapper());
-        System.out.println(user.size());
 		return user.size() > 0 ? true : false;
 
 	}
 	
 	//change the password of user if user forgot the password
 	public int forgetchangepassowrd(UserDetails ud){    
-		System.out.println(ud.getEmail()+' '+ud.getPassword());
 	    String sql="update gr4_user_details set gud_password='"+ud.getPassword()+"' where GUD_EMAIL='"+ud.getEmail()+"' ";    
 	    return jdbcTemplate.update(sql);    
 	} 

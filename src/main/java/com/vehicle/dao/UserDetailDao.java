@@ -21,7 +21,6 @@ public class UserDetailDao implements IUserDetailDao {
 	
 	//to insert the user details and document in the table
 	public void saveData(UserDetails u,MultipartFile... files) {
-		System.out.println("inside dao save data");
 		String getUserId="select GR4_USER_DETAILS_SEQ.nextval from dual";
 		int userId=getUserSeq(getUserId);
 		u.setUserId(userId);
@@ -77,12 +76,9 @@ public class UserDetailDao implements IUserDetailDao {
 				stream.write(bytes);
 				stream.close();
 
-				System.out.println("Server File Location=" + serverFile.getAbsolutePath());
-
 				paths[i] =serverFile.getAbsolutePath();
 
 			} catch (Exception e) {
-				System.out.println("You failed to upload  => " + e.getMessage());
 				return null;
 			}
 			finally {

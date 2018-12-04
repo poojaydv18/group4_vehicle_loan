@@ -13,7 +13,6 @@ public class SuggetionDao {
 	
 	//store the suggestion
 	public void saveData(Suggestion s) {
-		System.out.println("inside dao save data");
 		String getSuggetionId="select GR4_SUGGETION_SEQ.nextval from dual";
 		int suggetionId=getSuggetionSeq(getSuggetionId);
 		String sql= "insert into gr4_suggetion values("+suggetionId+",'"+s.getName()+"','"+s.getMobile()+"','"+s.getEmail()+"','"+s.getSuggestion()+"')";

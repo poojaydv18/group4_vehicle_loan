@@ -15,8 +15,9 @@ if(session!=null)
 %> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+		<%@ page errorPage="ErrorPage.jsp" %>  
+	
+<!DOCTYPE html >
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -28,17 +29,18 @@ if(session!=null)
 <title>UserLogin</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="admincss/bootstrap.min.css" rel="stylesheet">
+<link href="admincss/bootstrap.min.css" rel="stylesheet" type="text/css">
 
 <!-- MetisMenu CSS -->
-<link href="admincss/metisMenu.min.css" rel="stylesheet">
+<link href="admincss/metisMenu.min.css" rel="stylesheet" type="text/css">
 
 <!-- Custom CSS -->
-<link href="admincss/startmin.css" rel="stylesheet">
+<link href="admincss/startmin.css" rel="stylesheet" type="text/css">
 
 <!-- Custom Fonts -->
-<link href="admincss/font-awesome.min.css" rel="stylesheet"
-	type="text/css">
+<link href="admincss/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="admincss/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 
 
 </head>

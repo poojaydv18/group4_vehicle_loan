@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page errorPage="ErrorPage.jsp" %>  
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -89,10 +90,21 @@ body {
 		<p>
 		<div>
 			<h3>
-				<a class="btn btn-large btn-success" ; data-toggle="confirmation"
-					href="Register.jsp">Apply For The given Eligible Loan Amount</a>
+			<form action="Register.jsp" id="eligiblelink" onsubmit="myFunction()">
+    <input type="submit" value="Apply For The given Eligible Loan Amount" />
+</form>
+				<!-- <a class="btn btn-large btn-success" ; data-toggle="confirmation"
+					href="Register.jsp" id="eligiblelink">Apply For The given Eligible Loan Amount</a> -->
 			</h3>
 		</div>
 	</div>
+	<script>
+function myFunction() {
+	if(document.getElementById("display_loanamount").value =0){
+    document.getElementById("eligiblelink").disabled = true;
+    alert("You Are Not Eligible...!!! Thank You For Applying."");
+}
+	}
+</script>
 </body>
 </html>

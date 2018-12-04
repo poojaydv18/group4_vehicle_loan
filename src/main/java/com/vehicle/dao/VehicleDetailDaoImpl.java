@@ -23,7 +23,6 @@ public class VehicleDetailDaoImpl implements IVehicleDetailDao {
 		
 		String getVehicleId="select GR4_VEHICLE_DETAILS_SEQ.nextval from dual";
 		int vehicleId=getVehicleSeq(getVehicleId);
-		System.out.println(vehicleId);
 		String query="select max(gud_id) from gr4_user_details";
 		int uid=jdbcTemplate.queryForObject(query, Integer.class);
 			

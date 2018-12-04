@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.vehicle.model.*;
 import com.vehicle.dao.*;
 @Controller  
-public class AdminClientController {  
+public class AdminController {  
     @Autowired  
     LoanOfferDaoImpl ldao;//will inject dao from xml file  
     @Autowired  
@@ -31,10 +31,8 @@ public class AdminClientController {
      */  
     @RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
 	public ModelAndView adminLogin(ModelAndView model, @ModelAttribute Admin admin, HttpSession session) {
-System.out.println(admin.getAdminemail()+ admin.getAdminpassword());
 		if (admin.getAdminemail().equals("admin@gmail.com") && admin.getAdminpassword().equals("admin123")) {
 			session.setAttribute("isAdminLoggedIn", true);
-			System.out.println(session.getAttribute("isAdminLoggedIn"));
 			model.setViewName("AdminDashboard");
 		} else {
 			model.setViewName("AdminLogin");
@@ -43,17 +41,15 @@ System.out.println(admin.getAdminemail()+ admin.getAdminpassword());
 
 	}
     
-    
-	@RequestMapping(value = "/adminlogout")
+ 
+	/*@RequestMapping(value = "/adminlogout")
 	public ModelAndView adminLogout(ModelAndView model, HttpSession session) {
-
-		//session.removeAttribute("isAdminLoggedIn");
+		session.removeAttribute("isAdminLoggedIn");
 		session.invalidate();
 		model.setViewName("Index");
-
 		return model;
 
-	}
+	}*/
     /* It provides list of clients in model object */  
     @RequestMapping("/viewclient")  
     public ModelAndView viewemp(){  
@@ -82,4 +78,26 @@ System.out.println(admin.getAdminemail()+ admin.getAdminpassword());
 		response.setContentType(mimeType);
 		IOUtils.copy(in, response.getOutputStream());//sends file to browser
 	}
+    
+    
+    @RequestMapping(value="/clientapprove/{userId}/{loanAmount}")  
+    public ModelAndView approve(@PathVariable("userId") int userId,@PathVariable("loanAmount") long loanAmount, @ModelAttribute AccountDetails ad){  
+       
+    	ad.setLoanAmount(loanAmount);
+        ad.setUserId(userId);   
+		ldao.approve(userId);  
+		ldao.createAccount(ad);
+		return new ModelAndView("redirect:../../viewclient");  
+    }  
+    
+    // this will accept the userid and give admin access to reject the application.
+    @RequestMapping(value="/clientreject/{userId}")  
+    public ModelAndView reject(@PathVariable int userId){  
+        
+		ldao.reject(userId);  
+		return new ModelAndView("redirect:../viewclient");  
+    }  
+   
+    
+    
 }  

@@ -59,7 +59,7 @@
 	</error-page>
 
 	<error-page>
-		<exception-type>java.lang.SQLException</exception-type>
+		<exception-type>java.sql.SQLException</exception-type>
 		<location>/ErrorPage.jsp</location>
 	</error-page>
 

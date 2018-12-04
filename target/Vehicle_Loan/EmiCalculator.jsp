@@ -98,7 +98,7 @@ input[type=text], input[type=number] {
         {
                 var principal = document.formval.principal_amt.value; // pick principal value from from..
                 var rate_interest = document.formval.rate.value;
-		var roi = (rate_interest)/(100*12);
+				var roi = (rate_interest)/(100*12);
                 var tenure = document.formval.tenure.value; // pick tenure value from from..
                 var tenureinmonths = tenure * 12;
                 var compoundinterest = (principal * roi * Math.pow((1+roi),tenureinmonths))/(Math.pow((1+roi),tenureinmonths)-1); 

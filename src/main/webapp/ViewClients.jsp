@@ -15,8 +15,9 @@ if(session!=null)
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<%@ page errorPage="ErrorPage.jsp" %>  
 
+<!DOCTYPE html >
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -24,6 +25,7 @@ if(session!=null)
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <title>Admin Dashboard</title>
 
@@ -72,7 +74,7 @@ if(session!=null)
 
 
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="adminlogout"> <i
+				data-toggle="dropdown" href="Index.jsp"> <i
 					class="fa fa-user fa-fw"></i> Logout </b>
 			</a></li>
 		</ul>
@@ -144,7 +146,12 @@ if(session!=null)
 			</div>
 
 		</div>
+<script>
+    $(document).ready(function () {
 
+       
+    });
+</script>
 
 		<!-- /#wrapper -->
 </body>

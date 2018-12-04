@@ -29,11 +29,8 @@ public class UserLoginDao implements IUserLoginDao {
 	}
 	
 	public String getLoanStatus(UserLogin ul) {
-		System.out.println(ul.getEmail());
 		 String status="select gr4_loan_details.gld_status from gr4_loan_details INNER JOIN gr4_user_details on  gr4_loan_details.gld_gud_id = gr4_user_details.gud_id where gud_email='" + ul.getEmail() +"' ";  
-
 		String loanStatus = (String)getJdbcTemplate().queryForObject(status, String.class);
-		System.out.println(loanStatus);
 		return loanStatus;			
 	}
 	

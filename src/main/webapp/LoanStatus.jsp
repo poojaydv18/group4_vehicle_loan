@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false"%>
+	<%@ page errorPage="ErrorPage.jsp" %>  
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE html >
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -59,7 +59,7 @@
 
 
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="userlogout"> <i
+				data-toggle="dropdown" href="Index.jsp"> <i
 					class="fa fa-user fa-fw"></i> Logout </b>
 			</a></li>
 		</ul>
