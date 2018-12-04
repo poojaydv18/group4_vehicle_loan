@@ -10,7 +10,7 @@ import com.vehicle.model.*;
 import com.vehicle.controller.*;
 
   
-public class ViewClientDao {  
+public class ViewClientDao implements IViewClientDao {  
 JdbcTemplate template;  
   
 public void setTemplate(JdbcTemplate template) {  

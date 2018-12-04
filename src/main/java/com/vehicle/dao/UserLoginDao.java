@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 import java.util.List;
 import com.vehicle.model.*;
 
-public class UserLoginDao {
+public class UserLoginDao implements IUserLoginDao {
 
 	private JdbcTemplate jdbcTemplate;  
 	  

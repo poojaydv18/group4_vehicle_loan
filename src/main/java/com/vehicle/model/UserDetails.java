@@ -86,8 +86,7 @@ public class UserDetails {
 		//this.password =password;
 		this.password = MD5.getMd5(password);
 		}
-	
-	
+
 	public String getState() {
 		return state;
 	}
