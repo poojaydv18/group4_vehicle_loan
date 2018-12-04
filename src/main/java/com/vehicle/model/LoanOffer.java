@@ -8,6 +8,7 @@ public class LoanOffer {
 	private long loanAmount;
 	private int tenure;
 	private float interestRate;
+	
 	public LoanOffer() {
 		
 	}

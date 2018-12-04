@@ -142,7 +142,7 @@ $( window ).load(function() {
 						</div>
 						<div class="form-group">
 							<label for="Interest Rate">Interest Rate :</label> <input
-								type="text" id="interestrate" name="interestRate" required />
+								type="text" id="interestrate" name="interestRate" value="9.25"  required readonly />
 						</div>
 						<hr noshade>
 						<div class="form-group">
@@ -150,7 +150,6 @@ $( window ).load(function() {
 							<input type="hidden" id="status" name="status" value="PENDING"
 								required />
 						</div>
-
 
 						<div class="form-submit">
 							<input type=submit class="save" value="Submit">

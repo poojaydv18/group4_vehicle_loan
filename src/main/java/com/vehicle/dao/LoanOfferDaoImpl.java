@@ -31,7 +31,7 @@ public class LoanOfferDaoImpl implements  ILoanOfferDao{
 	//to insert the data in table
 public void saveLoanOffer(LoanOffer lo) {
 		
-		String getLoanId="select GR4_VEHICLE_DETAILS_SEQ.nextval from dual";
+		String getLoanId="select GR4_LOAN_DETAILS_SEQ.nextval from dual";
 		int LoanId=getLoanSeq(getLoanId);
 		String query="select max(gud_id) from gr4_user_details";
 		int uid=jdbcTemplate.queryForObject(query, Integer.class);
@@ -39,13 +39,12 @@ public void saveLoanOffer(LoanOffer lo) {
 		String sql="insert into gr4_loan_details values("+LoanId+","+uid+",'"+lo.getLoanAmount()+"','"+lo.getTenure()+"','"+lo.getInterestRate()+"','"+lo.getStatus()+"')";
 		jdbcTemplate.update(sql);
 	}
-
-//to get the sequence of loan id
+//to get the sequence of loan i
 	private int getLoanSeq(String query) {
 		int res=jdbcTemplate.queryForObject(query, int.class);
 		return res;
-		
 	}
+	
 	
 	// to get list of clients and their status
 	public List<LoanOffer> getClients(){  
@@ -72,29 +71,41 @@ public void saveLoanOffer(LoanOffer lo) {
 			public CompleteRegistration mapRow(ResultSet rs, int rowNum) throws SQLException {
 			   
 				CompleteRegistration cr = new CompleteRegistration(); 
-				cr.setUserId(rs.getInt(1));
-				cr.setName(rs.getString(2));
-				cr.setGender(rs.getString(3));
-				cr.setAge(rs.getInt(4));
-				cr.setMobile(rs.getLong(5));
-				cr.setEmail(rs.getString(6));
-				cr.setPassword(rs.getString(7));
-				cr.setAddress(rs.getString(8));
-				cr.setState(rs.getString(9));
-				cr.setCity(rs.getString(10));
-				cr.setPincode(rs.getInt(11));
-				cr.setCarMake(rs.getString(12));
-				cr.setCarModel(rs.getString(13));
-				cr.setExShowroomPrice(rs.getLong(14));
-				cr.setTypeOfEmployment(rs.getString(15));
-				cr.setAnnualIncome(rs.getLong(16));
-				cr.setExistingEmi(rs.getLong(17));
-				cr.setLoanId(rs.getInt(18));
-				cr.setLoanAmount(rs.getLong(19));
-				cr.setTenure(rs.getInt(20));
-				cr.setInterestRate(rs.getFloat(21));
-				cr.setStatus(rs.getString(22));
+				
+				UserDetails ud = new UserDetails();
+				VehicleDetails vd = new VehicleDetails();
+				IncomeDetails id= new IncomeDetails();
+				LoanOffer lo = new LoanOffer();
+				
+				
+				ud.setUserId(rs.getInt(1));
+				ud.setName(rs.getString(2));
+				ud.setGender(rs.getString(3));
+				ud.setAge(rs.getInt(4));
+				ud.setMobile(rs.getLong(5));
+				ud.setEmail(rs.getString(6));
+				ud.setPassword(rs.getString(7));
+				ud.setAddress(rs.getString(8));
+				ud.setState(rs.getString(9));
+				ud.setCity(rs.getString(10));
+				ud.setPincode(rs.getInt(11));
+				
+				vd.setCarMake(rs.getString(12));
+				vd.setCarModel(rs.getString(13));
+				vd.setExShowroomPrice(rs.getLong(14));
+				id.setTypeOfEmployment(rs.getString(15));
+				id.setAnnualIncome(rs.getLong(16));
+				id.setExistingEmi(rs.getLong(17));
+				lo.setLoanId(rs.getInt(18));
+				lo.setLoanAmount(rs.getLong(19));
+				lo.setTenure(rs.getInt(20));
+				lo.setInterestRate(rs.getFloat(21));
+				lo.setStatus(rs.getString(22));
 	           
+				cr.setUd(ud);
+				cr.setVd(vd);
+				cr.setId(id);
+				cr.setLo(lo);
 	           return cr;
 			}	
 		});
@@ -113,7 +124,12 @@ public void saveLoanOffer(LoanOffer lo) {
 	    String sql="update GR4_Loan_Details set GLD_STATUS='REJECTED' where gld_gud_id="+userId+" ";  
 	 
 	     jdbcTemplate.update(sql);  
-	
+	}	
+	public void createAccount(AccountDetails ad) {
+		String getLoanAccNo="select GR4_LOAN_ACC.nextval from dual";
+		int LoanAccNo=getLoanSeq(getLoanAccNo);
+		String sql="insert into gr4_loan_account values("+LoanAccNo+","+ad.getUserId()+","+ad.getLoanAmount()+")";
+		jdbcTemplate.update(sql);
 	}
 	
 }

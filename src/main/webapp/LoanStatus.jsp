@@ -59,7 +59,7 @@
 
 
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="index.jsp"> <i
+				data-toggle="dropdown" href="userlogout"> <i
 					class="fa fa-user fa-fw"></i> Logout </b>
 			</a></li>
 		</ul>

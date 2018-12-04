@@ -16,91 +16,91 @@
 		<c:forEach var="emp" items="${list}">
 			<tr>
 				<th>User Id</th>
-				<td>${emp.userId}</td>
+				<td>${emp.ud.userId}</td>
 			</tr>
 			<tr>
 				<th>Name</th>
-				<td>${emp.name}</td>
+				<td>${emp.ud.name}</td>
 			</tr>
 			<tr>
 				<th>Gender</th>
-				<td>${emp.gender}</td>
+				<td>${emp.ud.gender}</td>
 			</tr>
 			<tr>
 				<th>Age</th>
-				<td>${emp.age}</td>
+				<td>${emp.ud.age}</td>
 			</tr>
 			<tr>
 				<th>Mobile</th>
-				<td>${emp.mobile}</td>
+				<td>${emp.ud.mobile}</td>
 			</tr>
 			<tr>
 				<th>Email</th>
-				<td>${emp.email}</td>
+				<td>${emp.ud.email}</td>
 			</tr>
 			<tr>
 				<th>Password</th>
-				<td>${emp.password}</td>
+				<td>${emp.ud.password}</td>
 			</tr>
 			<tr>
 				<th>Address</th>
-				<td>${emp.address}</td>
+				<td>${emp.ud.address}</td>
 			</tr>
 			<tr>
 				<th>State</th>
-				<td>${emp.state}</td>
+				<td>${emp.ud.state}</td>
 			</tr>
 			<tr>
 				<th>City</th>
-				<td>${emp.city}</td>
+				<td>${emp.ud.city}</td>
 			</tr>
 			<tr>
 				<th>Pincode</th>
-				<td>${emp.pincode}</td>
+				<td>${emp.ud.pincode}</td>
 			</tr>
 			<tr>
 				<th>Car Make</th>
-				<td>${emp.carMake}</td>
+				<td>${emp.vd.carMake}</td>
 			</tr>
 			<tr>
 				<th>Car Model</th>
-				<td>${emp.carModel}</td>
+				<td>${emp.vd.carModel}</td>
 			</tr>
 			<tr>
 				<th>Ex Showroom Price</th>
-				<td>${emp.exShowroomPrice}</td>
+				<td>${emp.vd.exShowroomPrice}</td>
 			</tr>
 			<tr>
 				<th>Type Of Employment</th>
-				<td>${emp.typeOfEmployment}</td>
+				<td>${emp.id.typeOfEmployment}</td>
 			</tr>
 			<tr>
 				<th>Annual Income</th>
-				<td>${emp.annualIncome}</td>
+				<td>${emp.id.annualIncome}</td>
 			</tr>
 			<tr>
 				<th>Existing Emi</th>
-				<td>${emp.existingEmi}</td>
+				<td>${emp.id.existingEmi}</td>
 			</tr>
 			<tr>
 				<th>LoanId</th>
-				<td>${emp.loanId}</td>
+				<td>${emp.lo.loanId}</td>
 			</tr>
 			<tr>
 				<th>Loan Amount</th>
-				<td>${emp.loanAmount}</td>
+				<td>${emp.lo.loanAmount}</td>
 			</tr>
 			<tr>
 				<th>Tenure</th>
-				<td>${emp.tenure}</td>
+				<td>${emp.lo.tenure}</td>
 			</tr>
 			<tr>
 				<th>Interest Rate</th>
-				<td>${emp.interestRate}</td>
+				<td>${emp.lo.interestRate}</td>
 			</tr>
 			<tr>
 				<th>Status</th>
-				<td>${emp.status}</td>
+				<td>${emp.lo.status}</td>
 			</tr>
 
 

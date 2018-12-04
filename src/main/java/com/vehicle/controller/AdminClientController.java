@@ -47,7 +47,7 @@ System.out.println(admin.getAdminemail()+ admin.getAdminpassword());
 	@RequestMapping(value = "/adminlogout")
 	public ModelAndView adminLogout(ModelAndView model, HttpSession session) {
 
-		session.removeAttribute("isAdminLoggedIn");
+		//session.removeAttribute("isAdminLoggedIn");
 		session.invalidate();
 		model.setViewName("Index");
 

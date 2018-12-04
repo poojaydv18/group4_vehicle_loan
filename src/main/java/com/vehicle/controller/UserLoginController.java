@@ -22,11 +22,12 @@ public class UserLoginController {
 	
 	
 	@RequestMapping("/UserLogin")
-	public ModelAndView login(ModelAndView model, @ModelAttribute UserLogin u, HttpServletRequest request) {
+	public ModelAndView login(ModelAndView model, @ModelAttribute UserLogin u,  HttpServletRequest request) {
 		       HttpSession session = request.getSession();
 		       
 		if (uldao.validateUser(u)) {
 			 session.setAttribute("loginemail", u.getEmail());	
+			 session.setAttribute("isUserLoggedIn", true);
 			model.setViewName("UserDashboard");
 
 		} else {
@@ -63,6 +64,16 @@ public class UserLoginController {
 		}
 		
 		
+	}
+	@RequestMapping(value = "/userlogout")
+	public ModelAndView adminLogout(ModelAndView model, HttpSession session) {
+
+		//session.removeAttribute("isUserLoggedIn");
+		session.invalidate();
+		model.setViewName("Index");
+
+		return model;
+
 	}
 	
 	

@@ -6,7 +6,7 @@ if(session!=null)
 	if(session.getAttribute("isAdminLoggedIn")==null)
 	{
 		out.println(session.getAttribute("isAdminLoggedIn"));
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("Index.jsp");
 	}
 }
 %>

@@ -1,3 +1,15 @@
+<%-- <%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+if(session!=null)
+{
+	if(session.getAttribute("isAdminLoggedIn")==null)
+	{
+		out.println(session.getAttribute("isAdminLoggedIn"));
+		response.sendRedirect("Index.jsp");
+	}
+}
+%> --%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false"%>
@@ -60,7 +72,7 @@
 
 
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="Index.jsp"> <i
+				data-toggle="dropdown" href="adminlogout"> <i
 					class="fa fa-user fa-fw"></i> Logout </b>
 			</a></li>
 		</ul>
@@ -122,7 +134,7 @@
 								<td><a href="dispfile/${vc.userId}/${3}">Pan Card</a></td>
 								<td><a href="dispfile/${vc.userId}/${4}">Pay Slip</a></td>
 								<td><a href="editclient/${vc.userId}">View</a></td>
-								<td><a href="clientapprove/${vc.userId}">Approve</a></td>
+								<td><a href="clientapprove/${vc.userId}/${vc.loanAmount}">Approve</a></td>
 								<td><a href="clientreject/${vc.userId}">Reject</a></td>
 							</tr>
 						</c:forEach>

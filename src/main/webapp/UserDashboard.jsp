@@ -1,3 +1,16 @@
+<%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+if(session!=null)
+{
+	if(session.getAttribute("isUserLoggedIn")==null)
+	{
+		out.println(session.getAttribute("isUserLoggedIn"));
+		response.sendRedirect("Index.jsp");
+	}
+}
+%>
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -57,7 +70,7 @@
 
 
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="Index.jsp"> <i
+				data-toggle="dropdown" href="userlogout"> <i
 					class="fa fa-user fa-fw"></i> Logout </b>
 			</a></li>
 		</ul>

@@ -99,7 +99,7 @@ if(localStorage){
             	var str_loan=0;
             }
             var str_eligibleloan = Math.min(str_loan, str_exshowroomprice);
-             var final INTEREST_RATE = 9.25;
+              var str_ir = 9.25;
             // Store data
             sessionStorage.setItem("store_carmake", str_carmake);
             sessionStorage.setItem("store_carmodel", str_carmodel);
@@ -114,7 +114,7 @@ if(localStorage){
             sessionStorage.setItem("store_email", str_email);
             sessionStorage.setItem("store_appliedloan", str_exshowroomprice);
             sessionStorage.setItem("store_eligibleloan", str_eligibleloan); 
-            sessionStorage.setItem("store_interestrate", INTEREST_RATE); 
+          sessionStorage.setItem("store_interestrate",str_ir); 
 
         });
     });
