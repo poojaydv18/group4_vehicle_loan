@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
 import java.net.*;
+import javax.servlet.http.HttpSession;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,13 +24,36 @@ import com.vehicle.dao.*;
 public class AdminClientController {  
     @Autowired  
     LoanOfferDaoImpl ldao;//will inject dao from xml file  
-      
     @Autowired  
     UserDetailDao pdao;
     /*It displays a form to input data, here "command" is a reserved request attribute 
      *which is used to display object data into form 
      */  
+    @RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
+	public ModelAndView adminLogin(ModelAndView model, @ModelAttribute Admin admin, HttpSession session) {
+System.out.println(admin.getAdminemail()+ admin.getAdminpassword());
+		if (admin.getAdminemail().equals("admin@gmail.com") && admin.getAdminpassword().equals("admin123")) {
+			session.setAttribute("isAdminLoggedIn", true);
+			System.out.println(session.getAttribute("isAdminLoggedIn"));
+			model.setViewName("AdminDashboard");
+		} else {
+			model.setViewName("AdminLogin");
+		}
+		return model;
+
+	}
     
+    
+	@RequestMapping(value = "/adminlogout")
+	public ModelAndView adminLogout(ModelAndView model, HttpSession session) {
+
+		session.removeAttribute("isAdminLoggedIn");
+		session.invalidate();
+		model.setViewName("Index");
+
+		return model;
+
+	}
     /* It provides list of clients in model object */  
     @RequestMapping("/viewclient")  
     public ModelAndView viewemp(){  

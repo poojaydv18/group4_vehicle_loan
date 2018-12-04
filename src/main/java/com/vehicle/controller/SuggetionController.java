@@ -20,7 +20,7 @@ public class SuggetionController {
 	@RequestMapping(value = "/suggestion", method = RequestMethod.POST)
 	public @ResponseBody ModelAndView save(@ModelAttribute Suggestion u) {
 			sdao.saveData(u);
-		return new ModelAndView("index");
+		return new ModelAndView("Index");
 		
 	}
 	
