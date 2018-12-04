@@ -90,8 +90,8 @@ body {
 		<p>
 		<div>
 			<h3>
-			<form action="Register.jsp" id="eligiblelink" onsubmit="myFunction()">
-    <input type="submit" value="Apply For The given Eligible Loan Amount" />
+			<form action="Register.jsp" >
+    <input type="submit" id="eligiblelink" onsubmit="myFunction()" value="Apply For The given Eligible Loan Amount" />
 </form>
 				<!-- <a class="btn btn-large btn-success" ; data-toggle="confirmation"
 					href="Register.jsp" id="eligiblelink">Apply For The given Eligible Loan Amount</a> -->
@@ -102,7 +102,7 @@ body {
 function myFunction() {
 	if(document.getElementById("display_loanamount").value =0){
     document.getElementById("eligiblelink").disabled = true;
-    alert("You Are Not Eligible...!!! Thank You For Applying."");
+    alert("You Are Not Eligible...!!! Thank You For Applying.");
 }
 	}
 </script>

@@ -1,8 +1,14 @@
 package com.vehicle.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +22,7 @@ import com.vehicle.dao.VehicleDetailDaoImpl;
 import com.vehicle.model.IncomeDetails;
 import com.vehicle.model.LoanOffer;
 import com.vehicle.model.UserDetails;
+import com.vehicle.model.UserLogin;
 import com.vehicle.model.VehicleDetails;
 @Controller
 public class UserDetailController {
@@ -60,9 +67,14 @@ public class UserDetailController {
 			ldao.saveLoanOffer(lo);
 			return new ModelAndView("UserLogin");
 		}
+		
+		@RequestMapping(value="/loantrack/{loginemail}")  
+	    public ModelAndView reject(@PathVariable String loginemail){  
+			 List<LoanOffer> list=ldao.getUserData(loginemail);  
+			 return new ModelAndView("LoanStatus","list",list);  
+	    }  
+		
+		
 
-	
-	
-	
 
 }

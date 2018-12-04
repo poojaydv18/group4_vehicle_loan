@@ -86,12 +86,9 @@ if(session!=null)
 
 					<li><a href="AdminDashboard.jsp" class="active"><i
 							class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
-					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
-							Clients</a> <!-- /.nav-second-level --></li>
 					<li><a href="viewclient""><i class="fa fa-table fa-fw"></i>
 							Application</a></li>
-					<li><a href="#"><i class="fa fa-edit fa-fw"></i> Rejected
-							List</a></li>
+					
 
 
 				</ul>

@@ -62,6 +62,23 @@ public void saveLoanOffer(LoanOffer lo) {
 	    });  
 	}
 	
+	public List<LoanOffer> getUserData(String loginemail){  
+	    return jdbcTemplate.query("select * from GR4_Loan_Details where GLD_GUD_ID = (select GUD_ID from gr4_USER_DETAILS where GUD_EMAIL= '"+loginemail+"') ",new RowMapper<LoanOffer>(){  
+	        public LoanOffer mapRow(ResultSet rs, int row) throws SQLException {  
+	            LoanOffer lo=new LoanOffer();  
+	          lo.setLoanId(rs.getInt(1));
+	          lo.setUserId(rs.getInt(2));
+	          lo.setLoanAmount(rs.getLong(3));
+	          lo.setTenure(rs.getInt(4));
+	          lo.setInterestRate(rs.getFloat(5));
+	          lo.setStatus(rs.getString(6));
+	            return lo;  
+	        }  
+	    });  
+	}
+	
+	
+	
 	// to display complete registration data on admin portal 
 	public List<CompleteRegistration> displayUserRecord(int userId)
 	   {

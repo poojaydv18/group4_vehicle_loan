@@ -84,7 +84,7 @@ if(session!=null)
 
 					<li><a href="UserDashboard.jsp" class="active"><i
 							class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
-					<li><a href="loantrack"><i class="fa fa-bar-chart-o fa-fw"></i>Loan
+					<li><a href="loantrack/${loginemail}"><i class="fa fa-bar-chart-o fa-fw"></i>Loan
 							Status</a> <!-- /.nav-second-level --></li>
 					</li>
 
